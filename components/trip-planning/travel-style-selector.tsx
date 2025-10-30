@@ -22,8 +22,8 @@ export default function TravelStyleSelector({
   const isSelected = (style: string) => style === selectedStyle;
 
   return (
-    <div className="bg-white dark:bg-background-dark/50 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
-      <h2 className="text-gray-900 dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em] pb-4">
+    <div className="glass-card rounded-2xl p-6">
+      <h2 className="text-foreground text-2xl font-bold leading-tight tracking-[-0.015em] pb-4">
         Travel Style
       </h2>
 
@@ -33,11 +33,11 @@ export default function TravelStyleSelector({
             key={name}
             onClick={() => onStyleChange(name)}
             className={`
-              flex flex-col items-center p-4 rounded-lg transition-all cursor-pointer
+              flex flex-col items-center p-4 rounded-xl transition-all cursor-pointer hover:scale-105 shadow-sm
               ${
                 isSelected(name)
-                  ? "border-2 border-primary bg-primary/10 dark:bg-primary/20"
-                  : "border border-gray-300 dark:border-gray-700 hover:border-primary hover:bg-primary/5 dark:hover:bg-primary/10"
+                  ? "border-2 border-primary bg-primary/10 shadow-lg"
+                  : "bg-white/80 dark:bg-slate-800/80 border-2 border-slate-300/60 dark:border-slate-600/60 hover:border-primary/70 hover:bg-white/90 dark:hover:bg-slate-800/90"
               }
             `}
           >
@@ -45,14 +45,14 @@ export default function TravelStyleSelector({
               className={`w-10 h-10 mb-2 ${
                 isSelected(name)
                   ? "text-primary"
-                  : "text-gray-500 dark:text-gray-400"
+                  : "text-muted-foreground"
               }`}
             />
             <span
               className={`font-medium ${
                 isSelected(name)
-                  ? "text-primary dark:text-orange-300 font-semibold"
-                  : "text-gray-700 dark:text-gray-300"
+                  ? "text-primary font-semibold"
+                  : "text-foreground"
               }`}
             >
               {name}

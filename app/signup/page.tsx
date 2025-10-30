@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { EyeOff, Eye } from "lucide-react";
-import BackgroundCarousel from "@/components/ui/background-carousel";
+import { EyeOff, Eye, Compass } from "lucide-react";
+import { FloatingOrbs } from "@/components/ui/floating-orbs";
+import { MoroccanDecorations } from "@/components/ui/moroccan-decorations";
 
 export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -26,19 +27,33 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden">
-      <BackgroundCarousel />
+    <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-orange-50/30 to-slate-100 dark:from-slate-950 dark:via-orange-950/20 dark:to-slate-900">
+      {/* Background Effects */}
+      <FloatingOrbs />
+      <MoroccanDecorations />
+      <div className="moroccan-pattern fixed inset-0 opacity-40" />
 
-      <div className="layout-container flex h-full w-full grow flex-col items-center justify-center">
-        <div className="flex w-full max-w-md flex-col items-center justify-center rounded-xl border border-white/10 bg-black/20 p-6 shadow-2xl backdrop-blur-lg sm:p-8 md:p-12">
+      <div className="relative layout-container flex h-full w-full grow flex-col items-center justify-center px-4 py-8">
+        <div className="glass-strong w-full max-w-md rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl animate-fade-in-scale">
           <div className="flex w-full flex-col items-center">
-            <div className="flex flex-col items-center gap-6 self-stretch">
-              <div className="flex flex-col items-center gap-4 self-stretch">
-                <h1 className="text-[32px] font-bold leading-tight tracking-tight text-white text-center">
-                  Join MarocAI and start your adventure
+            {/* Logo and Branding */}
+            <Link href="/" className="flex items-center gap-3 mb-8 group">
+              <div className="relative">
+                <Compass className="h-10 w-10 text-primary transition-transform group-hover:rotate-180 duration-500" />
+                <div className="absolute inset-0 blur-md bg-primary/30 group-hover:bg-primary/50 transition-all rounded-full" />
+              </div>
+              <span className="text-2xl font-bold text-gradient-primary">
+                MarocAI
+              </span>
+            </Link>
+
+            <div className="flex flex-col items-center gap-6 w-full">
+              <div className="flex flex-col items-center gap-2 text-center">
+                <h1 className="text-3xl font-bold leading-tight tracking-tight text-foreground">
+                  Start Your Journey
                 </h1>
-                <p className="text-base font-normal leading-normal text-white/80 text-center">
-                  Create your account to explore Morocco with AI guidance.
+                <p className="text-base font-normal leading-normal text-muted-foreground">
+                  Create your account to explore Morocco with AI
                 </p>
               </div>
 
@@ -47,11 +62,11 @@ export default function SignUpPage() {
                 className="flex w-full flex-col items-stretch gap-4"
               >
                 <label className="flex flex-col">
-                  <p className="text-sm font-medium leading-normal text-white/90 pb-2">
+                  <p className="text-sm font-medium leading-normal text-foreground/90 pb-2">
                     Email Address
                   </p>
                   <input
-                    className="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-[#ec4913]/50 border border-white/20 bg-white/10 h-12 placeholder:text-white/60 p-3 text-base font-normal leading-normal transition-all"
+                    className="glass w-full rounded-lg text-foreground focus:outline-0 focus:ring-2 focus:ring-primary/50 border-white/20 h-12 placeholder:text-muted-foreground p-3 text-base font-normal leading-normal transition-all"
                     placeholder="Enter your email"
                     type="email"
                     value={email}
@@ -61,12 +76,12 @@ export default function SignUpPage() {
                 </label>
 
                 <label className="flex flex-col">
-                  <p className="text-sm font-medium leading-normal text-white/90 pb-2">
+                  <p className="text-sm font-medium leading-normal text-foreground/90 pb-2">
                     Password
                   </p>
-                  <div className="flex w-full flex-1 items-stretch rounded-lg">
+                  <div className="flex w-full items-stretch rounded-lg glass">
                     <input
-                      className="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg text-white focus:outline-0 focus:ring-2 focus:ring-[#ec4913]/50 border border-white/20 bg-white/10 h-12 placeholder:text-white/60 p-3 pr-2 border-r-0 text-base font-normal leading-normal transition-all"
+                      className="flex w-full flex-1 bg-transparent rounded-l-lg text-foreground focus:outline-0 focus:ring-2 focus:ring-primary/50 h-12 placeholder:text-muted-foreground p-3 pr-2 text-base font-normal leading-normal transition-all border-0"
                       placeholder="Create a password"
                       type={showPassword ? "text" : "password"}
                       value={password}
@@ -77,7 +92,7 @@ export default function SignUpPage() {
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="text-white/60 flex border border-white/20 bg-white/10 items-center justify-center pr-3 pl-2 rounded-r-lg border-l-0 hover:text-white/80 transition-colors"
+                      className="text-muted-foreground flex items-center justify-center pr-3 pl-2 rounded-r-lg hover:text-foreground transition-colors"
                     >
                       {showPassword ? (
                         <Eye className="w-5 h-5" />
@@ -89,12 +104,12 @@ export default function SignUpPage() {
                 </label>
 
                 <label className="flex flex-col">
-                  <p className="text-sm font-medium leading-normal text-white/90 pb-2">
+                  <p className="text-sm font-medium leading-normal text-foreground/90 pb-2">
                     Confirm Password
                   </p>
-                  <div className="flex w-full flex-1 items-stretch rounded-lg">
+                  <div className="flex w-full items-stretch rounded-lg glass">
                     <input
-                      className="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg text-white focus:outline-0 focus:ring-2 focus:ring-[#ec4913]/50 border border-white/20 bg-white/10 h-12 placeholder:text-white/60 p-3 pr-2 border-r-0 text-base font-normal leading-normal transition-all"
+                      className="flex w-full flex-1 bg-transparent rounded-l-lg text-foreground focus:outline-0 focus:ring-2 focus:ring-primary/50 h-12 placeholder:text-muted-foreground p-3 pr-2 text-base font-normal leading-normal transition-all border-0"
                       placeholder="Confirm your password"
                       type={showConfirmPassword ? "text" : "password"}
                       value={confirmPassword}
@@ -107,7 +122,7 @@ export default function SignUpPage() {
                       onClick={() =>
                         setShowConfirmPassword(!showConfirmPassword)
                       }
-                      className="text-white/60 flex border border-white/20 bg-white/10 items-center justify-center pr-3 pl-2 rounded-r-lg border-l-0 hover:text-white/80 transition-colors"
+                      className="text-muted-foreground flex items-center justify-center pr-3 pl-2 rounded-r-lg hover:text-foreground transition-colors"
                     >
                       {showConfirmPassword ? (
                         <Eye className="w-5 h-5" />
@@ -120,18 +135,18 @@ export default function SignUpPage() {
 
                 <button
                   type="submit"
-                  className="flex mt-2 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-5 flex-1 bg-[#ec4913] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#ec4913]/90 transition-colors duration-200"
+                  className="mt-2 rounded-xl h-12 px-6 bg-primary hover:bg-primary/90 text-white text-base font-bold leading-normal transition-all hover:scale-105"
                 >
-                  <span className="truncate">Sign Up</span>
+                  <span>Sign Up</span>
                 </button>
               </form>
 
-              <div className="flex px-4 py-3">
-                <p className="text-sm font-normal text-white/60">
+              <div className="flex px-4 py-2">
+                <p className="text-sm font-normal text-muted-foreground">
                   Already have an account?{" "}
                   <Link
                     href="/signin"
-                    className="font-bold text-[#ec4913]/90 hover:text-[#ec4913] transition-colors"
+                    className="font-bold text-primary hover:text-primary/80 transition-colors"
                   >
                     Sign in
                   </Link>

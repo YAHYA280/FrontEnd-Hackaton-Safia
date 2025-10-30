@@ -34,8 +34,8 @@ export default function InterestsSelector({
   };
 
   return (
-    <div className="bg-white dark:bg-background-dark/50 rounded-xl border border-gray-200 dark:border-gray-800 p-6">
-      <h2 className="text-gray-900 dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em] pb-4">
+    <div className="glass-card rounded-2xl p-6">
+      <h2 className="text-foreground text-2xl font-bold leading-tight tracking-[-0.015em] pb-4">
         Your Interests
       </h2>
 
@@ -45,11 +45,11 @@ export default function InterestsSelector({
             key={interest}
             onClick={() => handleInterestToggle(interest)}
             className={`
-              flex h-10 items-center justify-center gap-x-2 rounded-full px-5 transition-all
+              flex h-10 items-center justify-center gap-x-2 rounded-full px-5 transition-all hover:scale-105 shadow-sm
               ${
                 isSelected(interest)
-                  ? "border-2 border-primary bg-primary text-white"
-                  : "border border-gray-300 dark:border-gray-600 bg-transparent hover:border-primary hover:bg-primary/10"
+                  ? "border-2 border-primary bg-primary text-white shadow-lg"
+                  : "bg-white/80 dark:bg-slate-800/80 border-2 border-slate-300/60 dark:border-slate-600/60 hover:border-primary/70 hover:bg-white/90 dark:hover:bg-slate-800/90"
               }
             `}
           >
@@ -57,7 +57,7 @@ export default function InterestsSelector({
               className={`text-sm font-medium ${
                 isSelected(interest)
                   ? "text-white"
-                  : "text-gray-700 dark:text-gray-300"
+                  : "text-foreground"
               }`}
             >
               {interest}
