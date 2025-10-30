@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "Hello App",
-  description: "A simple hello landing page built with Next.js 14",
+  title: "MarocAI - Your AI-Powered Moroccan Travel Guide",
+  description:
+    "Plan your personalized Moroccan adventure with MarocAI - Your AI-powered guide to the magic of Morocco.",
 };
 
 export default function RootLayout({
@@ -16,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
