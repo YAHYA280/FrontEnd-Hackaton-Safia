@@ -54,13 +54,12 @@ export default function AIAssistance({
   };
 
   return (
-    <div className="glass-card rounded-2xl p-6">
-      <h2 className="text-foreground text-2xl font-bold leading-tight tracking-[-0.015em] pb-1">
+    <div className="clean-card p-6 hover-lift">
+      <h2 className="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight pb-1">
         AI Assistance
       </h2>
-      <p className="text-muted-foreground text-sm mb-6">
-        Let MarocAI handle the bookings for you. Select what you need assistance
-        with.
+      <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">
+        Let our AI handle the bookings for you
       </p>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -68,15 +67,15 @@ export default function AIAssistance({
           <Label
             key={service}
             htmlFor={service}
-            className="flex items-center p-3 rounded-lg bg-white/80 dark:bg-slate-800/80 border-2 border-slate-300/60 dark:border-slate-600/60 hover:border-primary/70 hover:bg-white/90 dark:hover:bg-slate-800/90 cursor-pointer transition-all has-[:checked]:border-primary has-[:checked]:bg-primary/10 has-[:checked]:ring-2 has-[:checked]:ring-primary/50 shadow-sm"
+            className="flex items-center p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-900/40 hover:bg-white dark:hover:bg-slate-750 cursor-pointer transition-all has-[:checked]:border-amber-900 has-[:checked]:bg-amber-50 dark:has-[:checked]:bg-amber-900/20 has-[:checked]:shadow-sm"
           >
             <Checkbox
               id={service}
               checked={isChecked(service)}
               onCheckedChange={() => handleServiceToggle(service)}
-              className="h-5 w-5 rounded border-2 border-slate-400 dark:border-slate-500 bg-white dark:bg-slate-700 data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+              className="h-5 w-5 rounded border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 data-[state=checked]:bg-amber-900 data-[state=checked]:border-amber-900"
             />
-            <span className="ml-3 font-medium text-foreground">
+            <span className="ml-3 font-medium text-slate-900 dark:text-slate-100">
               {service}
             </span>
           </Label>

@@ -34,8 +34,8 @@ export default function InterestsSelector({
   };
 
   return (
-    <div className="glass-card rounded-2xl p-6">
-      <h2 className="text-foreground text-2xl font-bold leading-tight tracking-[-0.015em] pb-4">
+    <div className="clean-card p-6 hover-lift">
+      <h2 className="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight pb-4">
         Your Interests
       </h2>
 
@@ -45,23 +45,15 @@ export default function InterestsSelector({
             key={interest}
             onClick={() => handleInterestToggle(interest)}
             className={`
-              flex h-10 items-center justify-center gap-x-2 rounded-full px-5 transition-all hover:scale-105 shadow-sm
+              flex items-center justify-center gap-x-2 rounded-full px-5 py-2.5 transition-all hover:scale-105 font-medium text-sm
               ${
                 isSelected(interest)
-                  ? "border-2 border-primary bg-primary text-white shadow-lg"
-                  : "bg-white/80 dark:bg-slate-800/80 border-2 border-slate-300/60 dark:border-slate-600/60 hover:border-primary/70 hover:bg-white/90 dark:hover:bg-slate-800/90"
+                  ? "bg-amber-900 dark:bg-amber-700 text-white shadow-md"
+                  : "bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-900/40 text-slate-900 dark:text-slate-100"
               }
             `}
           >
-            <p
-              className={`text-sm font-medium ${
-                isSelected(interest)
-                  ? "text-white"
-                  : "text-foreground"
-              }`}
-            >
-              {interest}
-            </p>
+            {interest}
           </button>
         ))}
       </div>

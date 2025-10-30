@@ -48,16 +48,16 @@ export default function CitySelector({
   };
 
   return (
-    <div className="glass-card rounded-2xl p-6">
-      <h2 className="text-foreground text-2xl font-bold leading-tight tracking-[-0.015em] pb-4">
+    <div className="clean-card p-6 hover-lift">
+      <h2 className="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight pb-4">
         Where to?
       </h2>
 
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5 z-10" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5 z-10" />
         <Input
-          className="w-full pl-10 pr-4 py-2.5 bg-white/90 dark:bg-slate-800/90 border-2 border-slate-300/60 dark:border-slate-600/60 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-foreground placeholder:text-muted-foreground shadow-sm"
-          placeholder="Select cities..."
+          className="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-amber-900/20 focus:border-amber-900 transition-all text-slate-900 dark:text-slate-100 placeholder:text-slate-400"
+          placeholder="Search cities..."
           type="text"
           value={searchTerm}
           onChange={(e) => {
@@ -69,12 +69,12 @@ export default function CitySelector({
 
         {/* Suggestions Dropdown */}
         {showSuggestions && searchTerm && filteredCities.length > 0 && (
-          <div className="absolute z-10 w-full mt-2 bg-white dark:bg-slate-800 border-2 border-slate-300/60 dark:border-slate-600/60 rounded-lg shadow-xl max-h-48 overflow-y-auto">
+          <div className="absolute z-20 w-full mt-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg max-h-48 overflow-y-auto">
             {filteredCities.map((city) => (
               <button
                 key={city}
                 onClick={() => handleAddCity(city)}
-                className="w-full text-left px-4 py-2.5 hover:bg-primary/10 text-foreground transition-colors border-b border-slate-200 dark:border-slate-700 last:border-b-0 first:rounded-t-lg last:rounded-b-lg"
+                className="w-full text-left px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 transition-colors border-b border-slate-100 dark:border-slate-700 last:border-b-0 first:rounded-t-xl last:rounded-b-xl"
               >
                 {city}
               </button>
@@ -85,14 +85,14 @@ export default function CitySelector({
 
       {/* Selected Cities */}
       {selectedCities.length > 0 && (
-        <div className="flex gap-3 p-3 flex-wrap -ml-3">
+        <div className="flex gap-3 flex-wrap mt-4">
           {selectedCities.map((city) => (
             <button
               key={city}
               onClick={() => handleRemoveCity(city)}
-              className="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/10 border-2 border-primary/50 pl-4 pr-3 text-primary hover:bg-primary/20 hover:border-primary transition-all hover:scale-105 shadow-sm"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 dark:bg-amber-900/20 border border-amber-900/20 dark:border-amber-400/20 text-amber-900 dark:text-amber-400 hover:bg-amber-100 dark:hover:bg-amber-900/30 transition-all hover:scale-105"
             >
-              <p className="text-sm font-medium leading-normal">{city}</p>
+              <span className="text-sm font-medium">{city}</span>
               <X className="w-4 h-4" />
             </button>
           ))}

@@ -22,8 +22,8 @@ export default function DateSelector({
   };
 
   return (
-    <div className="glass-card rounded-2xl p-6">
-      <h2 className="text-foreground text-2xl font-bold leading-tight tracking-[-0.015em] pb-5">
+    <div className="clean-card p-6 hover-lift">
+      <h2 className="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight pb-5">
         Trip Dates
       </h2>
 
@@ -31,7 +31,7 @@ export default function DateSelector({
         <div>
           <Label
             htmlFor="start-date"
-            className="block text-sm font-medium text-muted-foreground mb-1"
+            className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2"
           >
             Start Date
           </Label>
@@ -41,17 +41,17 @@ export default function DateSelector({
               type="date"
               value={dates.start}
               onChange={handleStartDateChange}
-              className="w-full pl-10 pr-4 py-2.5 bg-white/90 dark:bg-slate-800/90 border-2 border-slate-300/60 dark:border-slate-600/60 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-foreground shadow-sm"
+              className="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-amber-900/20 focus:border-amber-900 transition-all text-slate-900 dark:text-slate-100"
               placeholder="Select date"
             />
-            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5 pointer-events-none z-10" />
+            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5 pointer-events-none z-10" />
           </div>
         </div>
 
         <div>
           <Label
             htmlFor="end-date"
-            className="block text-sm font-medium text-muted-foreground mb-1"
+            className="block text-sm font-medium text-slate-600 dark:text-slate-400 mb-2"
           >
             End Date
           </Label>
@@ -62,10 +62,10 @@ export default function DateSelector({
               value={dates.end}
               onChange={handleEndDateChange}
               min={dates.start}
-              className="w-full pl-10 pr-4 py-2.5 bg-white/90 dark:bg-slate-800/90 border-2 border-slate-300/60 dark:border-slate-600/60 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-foreground shadow-sm"
+              className="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-amber-900/20 focus:border-amber-900 transition-all text-slate-900 dark:text-slate-100"
               placeholder="Select date"
             />
-            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-5 h-5 pointer-events-none z-10" />
+            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5 pointer-events-none z-10" />
           </div>
         </div>
       </div>

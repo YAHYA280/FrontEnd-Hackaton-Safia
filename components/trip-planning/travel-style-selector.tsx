@@ -22,8 +22,8 @@ export default function TravelStyleSelector({
   const isSelected = (style: string) => style === selectedStyle;
 
   return (
-    <div className="glass-card rounded-2xl p-6">
-      <h2 className="text-foreground text-2xl font-bold leading-tight tracking-[-0.015em] pb-4">
+    <div className="clean-card p-6 hover-lift">
+      <h2 className="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight pb-4">
         Travel Style
       </h2>
 
@@ -33,26 +33,26 @@ export default function TravelStyleSelector({
             key={name}
             onClick={() => onStyleChange(name)}
             className={`
-              flex flex-col items-center p-4 rounded-xl transition-all cursor-pointer hover:scale-105 shadow-sm
+              flex flex-col items-center p-5 rounded-xl transition-all cursor-pointer hover:scale-105
               ${
                 isSelected(name)
-                  ? "border-2 border-primary bg-primary/10 shadow-lg"
-                  : "bg-white/80 dark:bg-slate-800/80 border-2 border-slate-300/60 dark:border-slate-600/60 hover:border-primary/70 hover:bg-white/90 dark:hover:bg-slate-800/90"
+                  ? "bg-amber-50 dark:bg-amber-900/20 border-2 border-amber-900 dark:border-amber-400 shadow-md"
+                  : "bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-900/40"
               }
             `}
           >
             <Icon
               className={`w-10 h-10 mb-2 ${
                 isSelected(name)
-                  ? "text-primary"
-                  : "text-muted-foreground"
+                  ? "text-amber-900 dark:text-amber-400"
+                  : "text-slate-500 dark:text-slate-400"
               }`}
             />
             <span
-              className={`font-medium ${
+              className={`font-medium text-sm ${
                 isSelected(name)
-                  ? "text-primary font-semibold"
-                  : "text-foreground"
+                  ? "text-amber-900 dark:text-amber-400 font-semibold"
+                  : "text-slate-900 dark:text-slate-100"
               }`}
             >
               {name}
