@@ -165,7 +165,7 @@ export default function TripPage({ params }: TripPageProps) {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(requestBody),
+          body: JSON.stringify({...requestBody, ...profile}),
         });
 
         if (!response.ok) {
