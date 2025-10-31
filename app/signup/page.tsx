@@ -40,7 +40,20 @@ export default function SignUpPage() {
           alt="Morocco"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-50/20 dark:to-slate-950/20" />
+        {/* Fade effect on the right side of the image */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to right, transparent 0%, transparent 50%, rgba(255, 255, 255, 0.4) 75%, rgba(255, 255, 255, 1) 100%)',
+          }}
+        />
+        {/* Dark mode fade effect */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-0 dark:opacity-100 transition-opacity"
+          style={{
+            background: 'linear-gradient(to right, transparent 0%, transparent 50%, rgba(15, 23, 42, 0.4) 75%, rgb(15, 23, 42) 100%)',
+          }}
+        />
       </div>
 
       {/* Right side - Form */}
