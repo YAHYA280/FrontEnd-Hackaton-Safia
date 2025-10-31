@@ -1,0 +1,187 @@
+### Backend Onboarding Integration - Code References
+
+Below are direct references to the exact code implementing the onboarding REST integration and UI wiring.
+
+#### Client module (build request bodies, POST, parse stages)
+
+```1:25:lib/onboarding.ts
+export type InitialQuestion = { label: string; values: string[] };
+export type Responses = Record<string, string | string[] | Record<string, unknown>>;
+export type DynamicResponses = Record<string, string | string[] | Record<string, unknown>>;
+
+type DynamicFormQuestion = {
+  key: string;
+  label: string;
+  type: string;
+  options?: string[];
+  required: boolean;
+  maxSelect?: number;
+};
+
+type BackendDynamicForm = {
+  title: string;
+  description: string;
+  questions: DynamicFormQuestion[];
+};
+```
+
+```76:107:lib/onboarding.ts
+async function postOnboarding(
+  url: string,
+  body: {
+    questions: InitialQuestion[];
+    responses: Responses;
+    acceptDynamicForm: boolean;
+    dynamicResponses?: DynamicResponses;
+  }
+): Promise<BackendDynamicFormResponse | BackendProfileResponse | BackendErrorResponse> {
+  const res = await fetch(`${url}/api/onboarding`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  // ... error handling and JSON parsing ...
+  return data as BackendDynamicFormResponse | BackendProfileResponse | BackendErrorResponse;
+}
+```
+
+```109:149:lib/onboarding.ts
+export async function startOnboarding(
+  args: StartOnboardingArgs
+): Promise<ShowDynamicForm | DoneProfile | ErrorResult> {
+  const { BACKEND_URL, INITIAL_QUESTIONS, INITIAL_RESPONSES, ACCEPT_DYNAMIC_FORM } = args;
+
+  const body = {
+    questions: INITIAL_QUESTIONS,
+    responses: INITIAL_RESPONSES,
+    acceptDynamicForm: ACCEPT_DYNAMIC_FORM,
+  };
+
+  const resp = await postOnboarding(BACKEND_URL, body);
+  // ... route dynamic_form vs profile vs error ...
+}
+```
+
+```152:186:lib/onboarding.ts
+export async function continueOnboarding(
+  args: ContinueOnboardingArgs
+): Promise<DoneProfile | ErrorResult> {
+  const { BACKEND_URL, INITIAL_QUESTIONS, INITIAL_RESPONSES, ACCEPT_DYNAMIC_FORM, DYNAMIC_RESPONSES } = args;
+
+  const body = {
+    questions: INITIAL_QUESTIONS,
+    responses: INITIAL_RESPONSES,
+    acceptDynamicForm: ACCEPT_DYNAMIC_FORM,
+    dynamicResponses: DYNAMIC_RESPONSES,
+  };
+
+  const resp = await postOnboarding(BACKEND_URL, body);
+  // ... handle profile or error ...
+}
+```
+
+#### UI wiring (build initial payload, call API, render dynamic form)
+
+```3:13:app/plan-trip/page.tsx
+import { useMemo, useState } from "react";
+// ... other imports ...
+import { continueOnboarding, startOnboarding } from "@/lib/onboarding";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+```
+
+```31:43:app/plan-trip/page.tsx
+const [loading, setLoading] = useState(false);
+const [error, setError] = useState<string | null>(null);
+const [dynamicForm, setDynamicForm] = useState<
+  | { title: string; description: string; questions: { key: string; label: string; type: string; options?: string[]; required: boolean; maxSelect?: number }[] }
+  | null
+>(null);
+const [dynamicResponses, setDynamicResponses] = useState<Record<string, any>>({});
+const [acceptDynamicForm, setAcceptDynamicForm] = useState(false);
+```
+
+```84:104:app/plan-trip/page.tsx
+const buildInitialQuestions = () => [
+  { label: "Cities", values: ALL_CITIES },
+  { label: "Budget", values: [] },
+  { label: "Dates", values: [] },
+  { label: "AI Services", values: ALL_SERVICES },
+  { label: "Interests", values: ALL_INTERESTS },
+  { label: "Rythme Style", values: ALL_Rythme_STYLES },
+];
+
+const buildInitialResponses = () => ({
+  Cities: selectedCities,
+  Budget: { min: budgetRange.min, max: budgetRange.max },
+  Dates: { start: dates.start, end: dates.end },
+  "AI Services": aiServices,
+  Interests: interests,
+  "Rythme Style": RythmeStyle,
+});
+```
+
+```106:129:app/plan-trip/page.tsx
+const handleGenerateItinerary = async () => {
+  setError(null);
+  setLoading(true);
+  setDynamicForm(null);
+  const result = await startOnboarding({
+    BACKEND_URL,
+    INITIAL_QUESTIONS: buildInitialQuestions(),
+    INITIAL_RESPONSES: buildInitialResponses(),
+    ACCEPT_DYNAMIC_FORM: acceptDynamicForm,
+  });
+  if (result.nextAction === "show_dynamic_form") setDynamicForm(result.dynamicForm);
+  else if (result.nextAction === "error") setError(result.message);
+  setLoading(false);
+};
+```
+
+```132:155:app/plan-trip/page.tsx
+const submitDynamicForm = async () => {
+  if (!dynamicForm) return;
+  setError(null);
+  setLoading(true);
+  const result = await continueOnboarding({
+    BACKEND_URL,
+    INITIAL_QUESTIONS: buildInitialQuestions(),
+    INITIAL_RESPONSES: buildInitialResponses(),
+    ACCEPT_DYNAMIC_FORM: acceptDynamicForm,
+    DYNAMIC_RESPONSES: dynamicResponses,
+  });
+  if (result.nextAction === "done") { setDynamicForm(null); setDynamicResponses({}); }
+  else if (result.nextAction === "error") setError(result.message);
+  setLoading(false);
+};
+```
+
+```221:232:app/plan-trip/page.tsx
+<div className="pt-8 pb-2 animate-fade-in-up delay-200">
+  <div className="flex items-center gap-3 justify-center mb-4">
+    <Checkbox id="accept-dynamic-form" checked={acceptDynamicForm} onCheckedChange={(v) => setAcceptDynamicForm(Boolean(v))} />
+    <Label htmlFor="accept-dynamic-form" className="text-sm">Generate more preferences fields</Label>
+  </div>
+</div>
+```
+
+```234:395:app/plan-trip/page.tsx
+{dynamicForm && (
+  <div className="clean-card p-6 hover-lift animate-fade-in-up">
+    <h2>{dynamicForm.title}</h2>
+    <p>{dynamicForm.description}</p>
+    <div className="space-y-5">
+      {dynamicForm.questions.map((q) => (
+        <div key={q.key} className="flex flex-col gap-2">
+          <label className="text-sm font-medium">{q.label}</label>
+          {/* handles text/string, date (start/end), single/select, multi with maxSelect, range, number */}
+        </div>
+      ))}
+    </div>
+    <div className="pt-6">
+      <Button onClick={submitDynamicForm}>Continue →</Button>
+    </div>
+  </div>
+)}
+```

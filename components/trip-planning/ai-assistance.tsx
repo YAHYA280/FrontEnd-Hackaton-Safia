@@ -12,9 +12,9 @@ const SERVICES = [
   "All",
   "Accommodation",
   "Restaurants",
+  "Transportation",
   "Activities",
-  "Flights",
-  "Transport",
+  "Shopping",
 ];
 
 export default function AIAssistance({

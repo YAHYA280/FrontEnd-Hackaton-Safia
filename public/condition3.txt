@@ -1,0 +1,110 @@
+{
+	"success": true,
+	"data": {
+		"stage": "dynamic_form",
+		"form": {
+			"title": "Suivi de votre voyage au Maroc",
+			"description": "Merci d'avoir partagé vos préférences. Veuillez répondre aux questions suivantes pour affiner votre profil voyageur.",
+			"questions": [
+				{
+					"key": "favorite_cuisine",
+					"label": "Quelle cuisine souhaitez-vous découvrir?",
+					"type": "multi",
+					"options": [
+						"Marocaine",
+						"Méditerranéenne",
+						"Internationale",
+						"Street Food"
+					],
+					"maxSelect": 2,
+					"required": true
+				},
+				{
+					"key": "football_interest",
+					"label": "Êtes-vous intéressé par des événements footballistiques?",
+					"type": "single",
+					"options": [
+						"Oui",
+						"Non"
+					],
+					"required": true
+				},
+				{
+					"key": "activities_preference",
+					"label": "Quelles activités préférez-vous?",
+					"type": "multi",
+					"options": [
+						"Visites culturelles",
+						"Randonnées",
+						"Ateliers de cuisine",
+						"Sports",
+						"Shopping"
+					],
+					"maxSelect": 3,
+					"required": true
+				},
+				{
+					"key": "accommodation_type",
+					"label": "Quel type d'hébergement préférez-vous?",
+					"type": "single",
+					"options": [
+						"Hôtel",
+						"Riad",
+						"Auberge",
+						"Location d'appartement"
+					],
+					"required": true
+				},
+				{
+					"key": "transport_preference",
+					"label": "Quel mode de transport préférez-vous?",
+					"type": "multi",
+					"options": [
+						"Voiture de location",
+						"Transport public",
+						"Taxi",
+						"À pied"
+					],
+					"maxSelect": 2,
+					"required": true
+				},
+				{
+					"key": "family_travel",
+					"label": "Voyagez-vous avec des enfants?",
+					"type": "single",
+					"options": [
+						"Oui",
+						"Non"
+					],
+					"required": true
+				},
+				{
+					"key": "luxury_experience",
+					"label": "Souhaitez-vous inclure des expériences de luxe?",
+					"type": "single",
+					"options": [
+						"Oui",
+						"Non"
+					],
+					"required": true
+				},
+				{
+					"key": "cultural_events",
+					"label": "Souhaitez-vous assister à des événements culturels?",
+					"type": "single",
+					"options": [
+						"Oui",
+						"Non"
+					],
+					"required": true
+				},
+				{
+					"key": "travel_group_size",
+					"label": "Combien de personnes voyagez-vous avec?",
+					"type": "number",
+					"required": true
+				}
+			]
+		}
+	}
+}

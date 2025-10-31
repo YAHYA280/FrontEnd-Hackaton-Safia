@@ -1,0 +1,156 @@
+import { randomUUID } from 'crypto';
+import { openai, MODELS, DEFAULT_CONFIG } from '../config/openai';
+import { generateOnBoardingDynamicFormPrompt, SYSTEM_PROMPT_ONBOARDING } from '../prompts/onBoardingPrompt';
+
+export interface BaseQuestion {
+  label: string;
+  values: string[];
+}
+
+export interface OnBoardingRequest {
+  questions: BaseQuestion[];
+  responses?: { [label: string]: string | string[] | Record<string, any> };
+  acceptDynamicForm: boolean;
+  dynamicResponses?: { [label: string]: string | string[] | Record<string, any> };
+}
+
+export interface OnBoardingResponseDynamicForm {
+  stage: 'dynamic_form';
+  form: {
+    title: string;
+    description: string;
+    questions: Array<{
+      key: string;
+      label: string;
+      type: 'single' | 'multi' | 'text' | 'number' | 'date' | 'range';
+      options?: string[];
+      maxSelect?: number;
+      required: boolean;
+    }>;
+  };
+}
+
+export interface UserProfile {
+  id: string;
+  meta: {
+    createdAt: string;
+    locale: string;
+    version: string;
+  };
+  trip: {
+    destinations: string[];
+    dates?: { start?: string; end?: string };
+  };
+  preferences: {
+    interests?: string[];
+    rythmeStyle?: string;
+    aiAssistance?: string | string[];
+    additionalAnswers?: Record<string, any>;
+    formAnswers?: { initial?: Record<string, any>; dynamic?: Record<string, any> };
+  };
+  budget: {
+    currency: 'MAD';
+    rangeMad?: string;
+    estimatedPerDayMad?: number;
+  };
+}
+
+export interface OnBoardingResponseProfile {
+  stage: 'profile';
+  profile: UserProfile;
+}
+
+export type OnBoardingResponse = OnBoardingResponseDynamicForm | OnBoardingResponseProfile;
+
+// prompt déplacé vers src/prompts/onBoardingPrompt.ts
+
+function parseBudgetRange(range?: string): { min?: number; max?: number; avg?: number } {
+  if (!range || typeof range !== 'string') return {};
+  const match = range.replace(/\s/g, '').match(/^(\d+)-(\d+)$/);
+  if (!match) return {};
+  const min = parseInt(match[1], 10);
+  const max = parseInt(match[2], 10);
+  if (Number.isNaN(min) || Number.isNaN(max) || max < min) return {};
+  return { min, max, avg: Math.round((min + max) / 2) };
+}
+
+function daysBetween(start?: string, end?: string): number | undefined {
+  if (!start || !end) return undefined;
+  const s = new Date(start);
+  const e = new Date(end);
+  const ms = e.getTime() - s.getTime();
+  if (Number.isNaN(ms) || ms <= 0) return undefined;
+  return Math.ceil(ms / (1000 * 60 * 60 * 24));
+}
+
+function toArray(value: any): string[] | undefined {
+  if (!value) return undefined;
+  if (Array.isArray(value)) return value.map(String);
+  return [String(value)];
+}
+
+function buildUserProfile(payload: OnBoardingRequest): UserProfile {
+  const nowIso = new Date().toISOString();
+  const profileId = randomUUID();
+  const responses = payload.responses || {};
+  const dynamic = payload.dynamicResponses || {};
+
+  const destinations = toArray(responses['Where to?']) || [];
+
+  const datesObj = responses['Trip Dates'] as any;
+  const dates = datesObj && typeof datesObj === 'object'
+    ? { start: datesObj.start, end: datesObj.end }
+    : undefined;
+
+  const interests = toArray(responses['Your Interests']);
+  const rythmeStyleArr = toArray(responses['Rythme Style']);
+  const rythmeStyle = rythmeStyleArr && rythmeStyleArr[0] ? rythmeStyleArr[0] : undefined;
+  const aiAssistanceArr = toArray(responses['AI Assistance']);
+
+  const rangeMad = typeof responses['Your Budget (in MAD)'] === 'string'
+    ? (responses['Your Budget (in MAD)'] as string)
+    : undefined;
+  const { avg } = parseBudgetRange(rangeMad);
+  const numDays = daysBetween(dates?.start, dates?.end);
+  const estimatedPerDayMad = avg && numDays ? Math.round(avg / numDays) : undefined;
+
+  return {
+    id: profileId,
+    meta: { createdAt: nowIso, locale: 'fr-MA', version: '1.0' },
+    trip: { destinations, dates },
+    preferences: {
+      interests,
+      rythmeStyle,
+      aiAssistance: aiAssistanceArr && (aiAssistanceArr.length === 1 ? aiAssistanceArr[0] : aiAssistanceArr),
+      additionalAnswers: dynamic,
+      formAnswers: { initial: responses, dynamic }
+    },
+    budget: { currency: 'MAD', rangeMad, estimatedPerDayMad }
+  };
+}
+
+export async function onBoardingAgent(payload: OnBoardingRequest): Promise<OnBoardingResponse> {
+  if (payload.acceptDynamicForm && !payload.dynamicResponses) {
+    const prompt = generateOnBoardingDynamicFormPrompt(payload);
+    const completion = await openai.chat.completions.create({
+      model: MODELS.FAST,
+      messages: [
+        { role: 'system', content: SYSTEM_PROMPT_ONBOARDING },
+        { role: 'user', content: prompt }
+      ],
+      temperature: 0.4,
+      response_format: DEFAULT_CONFIG.response_format,
+    });
+    const content = completion.choices[0].message.content || '{}';
+    const json = JSON.parse(content);
+    return { stage: 'dynamic_form', form: json.form } as OnBoardingResponseDynamicForm;
+  }
+
+  const profile = buildUserProfile(payload);
+  return {
+    stage: 'profile',
+    profile
+  } as OnBoardingResponseProfile;
+}
+
+export default onBoardingAgent;
