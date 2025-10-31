@@ -19,7 +19,7 @@ export default function Home() {
     <main
       className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-50 via-orange-50/30 to-slate-100 dark:from-slate-950 dark:via-orange-950/20 dark:to-slate-900"
       style={{
-        backgroundImage: "url('/background1.png')",
+        backgroundImage: "url('/homebackground.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -49,9 +49,7 @@ export default function Home() {
 
             {/* Main Heading */}
             <h1 className="animate-fade-in-up delay-100 text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
-              <span className="block text-foreground">
-                Planifiez Moins,
-              </span>
+              <span className="block text-foreground">Planifiez Moins,</span>
               <span className="block text-gradient-primary mt-2">
                 Vivez Plus
               </span>
@@ -59,7 +57,9 @@ export default function Home() {
 
             {/* Subheading */}
             <p className="animate-fade-in-up delay-200 mx-auto max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
-              NEXTRIP est votre compagnon de voyage intelligent pour le Maroc. Optimisation budgétaire intelligente, itinéraires personnalisés et assistance 24h/24 pour rentabiliser chaque dirham.
+              NEXTRIP est votre compagnon de voyage intelligent pour le Maroc.
+              Optimisation budgétaire intelligente, itinéraires personnalisés et
+              assistance 24h/24 pour rentabiliser chaque dirham.
             </p>
 
             {/* CTA Buttons */}
@@ -92,11 +92,14 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-foreground">Voyager Ne Devrait Pas Être </span>
+              <span className="text-foreground">
+                Voyager Ne Devrait Pas Être{" "}
+              </span>
               <span className="text-gradient-primary">Si Compliqué</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-8">
-              Des voyages stressants, mal planifiés, où le voyageur passe plus de temps à organiser qu'à profiter.
+              Des voyages stressants, mal planifiés, où le voyageur passe plus
+              de temps à organiser qu'à profiter.
             </p>
           </div>
 
@@ -105,32 +108,42 @@ export default function Home() {
             {[
               {
                 title: "Planification Budgétaire Complexe",
-                description: "Difficulté à estimer les coûts réels (transport, hébergement, nourriture, activités) et à répartir intelligemment un budget limité entre différentes villes marocaines."
+                description:
+                  "Difficulté à estimer les coûts réels (transport, hébergement, nourriture, activités) et à répartir intelligemment un budget limité entre différentes villes marocaines.",
               },
               {
                 title: "Manque de Transparence Tarifaire",
-                description: "Les prix varient énormément selon les saisons, les villes et le type d'expérience (luxe vs authentique), rendant difficile l'estimation précise des dépenses."
+                description:
+                  "Les prix varient énormément selon les saisons, les villes et le type d'expérience (luxe vs authentique), rendant difficile l'estimation précise des dépenses.",
               },
               {
                 title: "Surcharge Informationnelle",
-                description: "Trop de sources disparates (blogs, forums, guides touristiques) sans vision unifiée ni personnalisation selon le profil et le budget du voyageur."
+                description:
+                  "Trop de sources disparates (blogs, forums, guides touristiques) sans vision unifiée ni personnalisation selon le profil et le budget du voyageur.",
               },
               {
                 title: "Optimisation Sous-Optimale",
-                description: "Les voyageurs dépensent souvent mal leur budget (trop sur l'hébergement, pas assez sur les expériences) ou manquent des opportunités locales."
+                description:
+                  "Les voyageurs dépensent souvent mal leur budget (trop sur l'hébergement, pas assez sur les expériences) ou manquent des opportunités locales.",
               },
               {
                 title: "Barrière Linguistique",
-                description: "Difficulté à comprendre les codes locaux, les périodes idéales, les spécificités régionales du Maroc sans assistance."
+                description:
+                  "Difficulté à comprendre les codes locaux, les périodes idéales, les spécificités régionales du Maroc sans assistance.",
               },
               {
                 title: "Manque d'Accompagnement",
-                description: "Absence de support continu pendant le voyage pour réajuster les plans, gérer les imprévus et optimiser l'expérience en temps réel."
-              }
+                description:
+                  "Absence de support continu pendant le voyage pour réajuster les plans, gérer les imprévus et optimiser l'expérience en temps réel.",
+              },
             ].map((problem, index) => (
               <div key={index} className="clean-card p-6 hover-lift">
-                <h3 className="text-lg font-bold text-foreground mb-3">{problem.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{problem.description}</p>
+                <h3 className="text-lg font-bold text-foreground mb-3">
+                  {problem.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {problem.description}
+                </p>
               </div>
             ))}
           </div>
@@ -138,20 +151,28 @@ export default function Home() {
       </section>
 
       {/* SafIA Introduction */}
-      <section className="relative py-16 px-6 lg:px-8 bg-gradient-to-br from-amber-50/50 to-orange-50/30 dark:from-amber-950/20 dark:to-orange-950/10">
+      <section className="relative py-16 px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          <div className="clean-card p-10 md:p-16 text-center">
+          <div className="clean-card p-10 md:p-16 text-center transition-all duration-300 hover:shadow-[0_8px_30px_rgb(146,64,14,0.12)] hover:-translate-y-1">
             <div className="mb-6">
-              <span className="text-6xl md:text-7xl font-bold text-gradient-primary">SafIA</span>
+              <span className="text-6xl md:text-7xl font-bold text-gradient-primary">
+                SafIA
+              </span>
             </div>
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Votre Assistante Voyage IA
             </h3>
             <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
-              <strong className="text-primary">Saf</strong> (سفر - Safar = Voyage en arabe) + <strong className="text-primary">IA</strong> (Intelligence Artificielle)
+              <strong className="text-primary">Saf</strong> (سفر - Safar =
+              Voyage en arabe) + <strong className="text-primary">IA</strong>{" "}
+              (Intelligence Artificielle)
             </p>
             <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              SafIA incarne parfaitement notre mission : combiner la richesse culturelle du voyage avec la puissance de l'intelligence artificielle. Elle communique naturellement avec vous, recommande les meilleurs endroits, s'améliore à chaque utilisation et vous accompagne du début à la fin de votre voyage.
+              SafIA incarne parfaitement notre mission : combiner la richesse
+              culturelle du voyage avec la puissance de l'intelligence
+              artificielle. Elle communique naturellement avec vous, recommande
+              les meilleurs endroits, s'améliore à chaque utilisation et vous
+              accompagne du début à la fin de votre voyage.
             </p>
           </div>
         </div>
@@ -166,7 +187,8 @@ export default function Home() {
               <span className="text-gradient-primary">NEXTRIP</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Une application de voyage intelligent propulsée par l'IA, spécialisée dans la planification budgétaire de voyages au Maroc
+              Une application de voyage intelligent propulsée par l'IA,
+              spécialisée dans la planification budgétaire de voyages au Maroc
             </p>
           </div>
 
@@ -256,7 +278,11 @@ export default function Home() {
                 Vision à Long Terme
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Devenir l'application de référence pour tout voyage au Maroc, où l'intelligence artificielle démocratise l'accès au tourisme marocain en rendant chaque budget viable et chaque expérience mémorable. NEXTRIP aspire à être l'interface entre le voyageur moderne et la richesse culturelle marocaine.
+                Devenir l'application de référence pour tout voyage au Maroc, où
+                l'intelligence artificielle démocratise l'accès au tourisme
+                marocain en rendant chaque budget viable et chaque expérience
+                mémorable. NEXTRIP aspire à être l'interface entre le voyageur
+                moderne et la richesse culturelle marocaine.
               </p>
             </div>
 
@@ -268,15 +294,21 @@ export default function Home() {
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1">•</span>
-                  <span>Optimisation IA de chaque dirham selon vos priorités</span>
+                  <span>
+                    Optimisation IA de chaque dirham selon vos priorités
+                  </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1">•</span>
-                  <span>Personnalisation profonde avec apprentissage continu</span>
+                  <span>
+                    Personnalisation profonde avec apprentissage continu
+                  </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1">•</span>
-                  <span>Transparence financière totale et contextualisation locale</span>
+                  <span>
+                    Transparence financière totale et contextualisation locale
+                  </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1">•</span>
@@ -299,11 +331,15 @@ export default function Home() {
 
             <div className="relative z-10">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                <span className="text-foreground">Votre Prochain Voyage au </span>
+                <span className="text-foreground">
+                  Votre Prochain Voyage au{" "}
+                </span>
                 <span className="text-gradient-primary">Maroc Vous Attend</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Laissez NEXTRIP et SafIA gérer la planification pendant que vous vous concentrez sur la création de souvenirs inoubliables. Chaque budget, chaque style, chaque rêve—optimisé.
+                Laissez NEXTRIP et SafIA gérer la planification pendant que vous
+                vous concentrez sur la création de souvenirs inoubliables.
+                Chaque budget, chaque style, chaque rêve—optimisé.
               </p>
               <Link href="/plan-trip">
                 <Button
@@ -320,14 +356,14 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative py-12 px-6 lg:px-8 border-t border-border/50">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center text-muted-foreground">
-            <p className="text-sm">
+      <footer className="relative bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+        <div className="mx-auto max-w-7xl px-6 py-6">
+          <div className="text-center">
+            <p className="text-xs text-slate-600 dark:text-slate-400">
               © 2025 NEXTRIP. Planifiez Moins, Vivez Plus.
             </p>
-            <p className="text-xs mt-2 opacity-75">
-              Propulsé par SafIA - Votre Compagnon de Voyage IA
+            <p className="text-xs text-slate-500 dark:text-slate-500 mt-1">
+              Propulsé par SafIA
             </p>
           </div>
         </div>
