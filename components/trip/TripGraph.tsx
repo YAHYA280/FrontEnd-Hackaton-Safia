@@ -178,100 +178,68 @@ const TripGraph = ({ voyageData, config }: TripGraphProps) => {
         currentJourY += 300;
       });
 
-      // Ajouter le nœud de transport entre villes
+      // Ajouter le nœud de transport entre villes uniquement si les données backend existent (pas de valeurs mock)
       if (villeIndex < voyageData.villes.length - 1 && graphConfig.showTransportNodes) {
         const nextVille = voyageData.villes[villeIndex + 1];
-        const transportNodeId = `transport-${ville.id_ville}-${nextVille.id_ville}`;
-
-        // Chercher les données de transport dans voyageData.transports
         const transportData = voyageData.transports?.find(
           t => t.ville_depart === ville.id_ville && t.ville_arrivee === nextVille.id_ville
         );
 
-        const transportY = currentY + villeHeight + 75;
-        const transportX = 400 + uniformVilleWidth / 2 - 32;
+        if (transportData) {
+          const transportNodeId = `transport-${ville.id_ville}-${nextVille.id_ville}`;
+          const transportY = currentY + villeHeight + 75;
+          const transportX = 400 + uniformVilleWidth / 2 - 32;
 
-        // Utiliser les données du JSON si disponibles, sinon valeurs par défaut
-        const titre = transportData?.titre || `Transport: ${ville.nom_ville} → ${nextVille.nom_ville}`;
-        const imageUrl = transportData?.imageUrl || "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=300&h=200&fit=crop";
-        const duree = transportData?.duree_moyenne || "3-4h";
-        const description = transportData?.description || `Voyage en train ou bus de ${ville.nom_ville} vers ${nextVille.nom_ville}. Une excellente opportunité de voir les paysages NEXTRIPns et découvrir le Maroc authentique.`;
-        const activites = transportData?.activites || ["Paysages pittoresques du Maroc", "Arrêts panoramiques", "Repos et préparation", "Découverte des régions"];
-        const resources = transportData?.resources || [];
+          nodes.push({
+            id: transportNodeId,
+            type: "transport",
+            position: { x: transportX, y: transportY },
+            data: {
+              titre: transportData.titre,
+              imageUrl: transportData.imageUrl,
+              heure: transportData.duree_moyenne,
+              description: transportData.description,
+              activites: transportData.activites,
+              couleurTheme: "teal",
+              jourLabel: "TRANSPORT",
+              type: "🚗 Transport Inter-Villes",
+              resources: transportData.resources,
+              transportOptions: transportData.transportOptions
+            },
+            zIndex: 1000,
+          });
 
-        // Options de transport (priorité aux données JSON)
-        const transportOptions = transportData?.transportOptions || [
-          {
-            type: "train",
-            name: "Train ONCF",
-            duration: "3h30",
-            price: "150-200 MAD",
-            comfort: "high" as const,
-            frequency: "4 départs/jour",
-            description: "Confortable et rapide, avec climatisation",
-            icon: "train",
-            recommended: true
-          },
-          {
-            type: "bus",
-            name: "Bus CTM",
-            duration: "4h00",
-            price: "80-120 MAD",
-            comfort: "medium" as const,
-            frequency: "Chaque heure",
-            description: "Économique et fiable",
-            icon: "bus",
-            recommended: false
-          }
-        ];
+          // Edges vers/depuis le transport
+          const lastJour = ville.jours[ville.jours.length - 1];
+          const lastEmplacement = lastJour.emplacements[lastJour.emplacements.length - 1];
 
-        nodes.push({
-          id: transportNodeId,
-          type: "transport",
-          position: { x: transportX, y: transportY },
-          data: {
-            titre,
-            imageUrl,
-            heure: duree,
-            description,
-            activites,
-            couleurTheme: "teal",
-            jourLabel: "TRANSPORT",
-            type: "🚗 Transport Inter-Villes",
-            resources,
-            transportOptions
-          },
-          zIndex: 1000,
-        });
+          edges.push({
+            id: `e${edgeId++}`,
+            source: lastEmplacement.id_emplacement,
+            target: transportNodeId,
+            style: { stroke: "rgb(120 53 15)", strokeWidth: 4, strokeDasharray: "12 8" },
+            type: "smoothstep",
+            animated: true,
+            label: "🚗 Transport",
+          });
 
-        // Edges vers/depuis le transport
-        const lastJour = ville.jours[ville.jours.length - 1];
-        const lastEmplacement = lastJour.emplacements[lastJour.emplacements.length - 1];
+          const firstJour = nextVille.jours[0];
+          const firstEmplacement = firstJour.emplacements[0];
 
-        edges.push({
-          id: `e${edgeId++}`,
-          source: lastEmplacement.id_emplacement,
-          target: transportNodeId,
-          style: { stroke: "rgb(120 53 15)", strokeWidth: 4, strokeDasharray: "12 8" },
-          type: "smoothstep",
-          animated: true,
-          label: "🚗 Transport",
-        });
+          edges.push({
+            id: `e${edgeId++}`,
+            source: transportNodeId,
+            target: firstEmplacement.id_emplacement,
+            style: { stroke: "rgb(120 53 15)", strokeWidth: 4, strokeDasharray: "12 8" },
+            type: "smoothstep",
+            animated: true,
+            label: "🚗 Transport",
+          });
 
-        const firstJour = nextVille.jours[0];
-        const firstEmplacement = firstJour.emplacements[0];
-
-        edges.push({
-          id: `e${edgeId++}`,
-          source: transportNodeId,
-          target: firstEmplacement.id_emplacement,
-          style: { stroke: "rgb(120 53 15)", strokeWidth: 4, strokeDasharray: "12 8" },
-          type: "smoothstep",
-          animated: true,
-          label: "🚗 Transport",
-        });
-
-        currentY = transportY + 150;
+          currentY = transportY + 150;
+        } else {
+          currentY += villeHeight + 150;
+        }
       } else {
         currentY += villeHeight + 150;
       }

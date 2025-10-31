@@ -17,7 +17,7 @@ import { startOnboarding, continueOnboarding } from "@/lib/onboarding";
 import DynamicFormWizard from "@/components/trip-planning/DynamicFormWizard";
 import LoadingView from "@/components/trip/LoadingView";
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001";
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:4000";
 
 // Mock data for testing dynamic form
 const MOCK_DYNAMIC_FORM = {
