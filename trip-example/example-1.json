@@ -1,0 +1,856 @@
+{
+    "id_voyage": "voyage-1761929498123",
+    "titre_voyage": "Voyage de 7 jours à Marrakech et Fès",
+    "duree_totale": 7,
+    "villes": [
+      {
+        "id_ville": "marrakech",
+        "nom_ville": "Marrakech",
+        "duree_sejour": 4,
+        "jours": [
+          {
+            "id_jour": "marrakech-jour-1",
+            "numero_jour": 1,
+            "titre_jour": "Jour 1 à Marrakech",
+            "theme": "Découverte",
+            "hebergement": {
+              "id_hebergement": "riad-marrakech-riad-el-fenn",
+              "nom": "Riad El Fenn",
+              "type": "🏡 Riad",
+              "categorie": "4 étoiles",
+              "imageUrl": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+              "adresse": "Derb el Farrane, Marrakech, Maroc",
+              "description": "Un riad élégant et traditionnel, offrant une expérience authentique au cœur de Marrakech. Profitez de son patio magnifique et de sa terrasse sur le toit.",
+              "equipements": [
+                "WiFi gratuit",
+                "Petit-déjeuner inclus",
+                "Terrasse",
+                "Climatisation",
+                "Salle de bain privée"
+              ],
+              "prix_nuit": "80 EUR",
+              "check_in": "14:00",
+              "check_out": "12:00",
+              "notes": "Patio agréable, Proche des souks, Service exceptionnel"
+            },
+            "emplacements": [
+              {
+                "id_emplacement": "marrakech-petit-dej-jour1",
+                "nom": "Café des Épices",
+                "type": "Restaurant",
+                "imageUrl": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80",
+                "heure": "08:30",
+                "duree": "1h",
+                "description": "Café traditionnel au cœur de la médina",
+                "activites": [
+                  "Petit déjeuner"
+                ],
+                "categorie_repas": "petit_dejeuner",
+                "menu": [
+                  "Msemen",
+                  "Pain marocain",
+                  "Confiture",
+                  "Thé à la menthe"
+                ],
+                "specialites": [
+                  "Petit déjeuner traditionnel"
+                ],
+                "prix": "40-60 MAD (4-5 EUR)",
+                "ambiance": "Authentique, médina",
+                "reservation": "Non nécessaire"
+              },
+              {
+                "id_emplacement": "marrakech-jemaa-el-fna",
+                "nom": "Place Jemaa el-Fna",
+                "type": "🌆 Place publique",
+                "imageUrl": "https://images.unsplash.com/photo-1582532700924-7f1b2b8a6c9e",
+                "heure": "09:00",
+                "duree": "2h",
+                "description": "La place Jamaa Alfna (en amazighe : ⴰⴱⴰⵔⴰⵣ ⵏ ⵊⴰⵎⵄ ⵍⴼⵏⴰ, en arabe : ساحة جامع الفنا, « place de la mosquée des trépassés ») est une célèbre place publique au sud-ouest de la médina de Marrakech au Maroc. Ce haut-lieu traditionnel, populaire et animé notamment la nuit qui attire plus d'un million de visiteurs chaque année.\nJemaa el-Fna incarne la diversité de l’identité marocaine en raison de la présence de représentants des différentes cultures qui constituent le Maroc : Arabes, Berbères, Gnaouas. « L'espace culturel de la place Jemaa el-Fna » est inscrit patrimoine culturel immatériel depuis 2008 (proclamation en 2001) et au patrimoine mondial depuis 1985 par l'Unesco.",
+                "activites": [
+                  "Visite",
+                  "Observation",
+                  "Photos"
+                ],
+                "resources": [
+                  {
+                    "type": "LINK",
+                    "title": "Guide",
+                    "url": "https://www.visitmorocco.com/jemaa-el-fna"
+                  },
+                  {
+                    "type": "LINK",
+                    "title": "Wikipedia: Place Jemaa el-Fna",
+                    "url": "https://fr.wikipedia.org/?curid=370702"
+                  }
+                ]
+              },
+              {
+                "id_emplacement": "marrakech-palais-bahia",
+                "nom": "Palais Bahia",
+                "type": "🏰 Palais",
+                "imageUrl": "https://images.unsplash.com/photo-1580478095657-44e2e6e4d7b3",
+                "heure": "11:00",
+                "duree": "1h30",
+                "description": "Le palais de la Bahia (قصر الباهية, en arabe, ⵜⴰⴳⴰⴷⵉⵔⵜ ⵏ ⵍⴱⴰⵀⵢⴰ, en berbère, Bāhiya, la belle, la brillante) est un ancien palais du XIXe siècle de huit hectares de style mauresque / islamique, à Marrakech au Maroc. Actuel musée, il est un des chefs-d'œuvre de l'architecture marocaine et de l'art marocain, un des monuments majeurs du patrimoine culturel du pays, et un des principaux lieux de tourisme au Maroc.\nOn attribue à l'architecte Si Mohammed El Mekki (1857-1926), élève du capitaine Erckman, chef de la mission française à Marrakech, l'essentiel des travaux.",
+                "activites": [
+                  "Visite",
+                  "Photographie"
+                ],
+                "resources": [
+                  {
+                    "type": "LINK",
+                    "title": "Visite Virtuelle",
+                    "url": "https://www.bahia-palace.com"
+                  },
+                  {
+                    "type": "LINK",
+                    "title": "Wikipedia: Palais de la Bahia",
+                    "url": "https://fr.wikipedia.org/?curid=726684"
+                  }
+                ]
+              },
+              {
+                "id_emplacement": "marrakech-dejeuner-jour1",
+                "nom": "Restaurant Al Fassia",
+                "type": "Restaurant",
+                "imageUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80",
+                "heure": "13:00",
+                "duree": "1h30",
+                "description": "Restaurant traditionnel réputé",
+                "activites": [
+                  "Déjeuner"
+                ],
+                "categorie_repas": "dejeuner",
+                "menu": [
+                  "Tajine agneau",
+                  "Couscous",
+                  "Salade marocaine"
+                ],
+                "specialites": [
+                  "Cuisine marocaine authentique"
+                ],
+                "prix": "100-120 MAD (10-12 EUR)",
+                "ambiance": "Traditionnel, famille",
+                "reservation": "Recommandée"
+              }
+            ]
+          },
+          {
+            "id_jour": "marrakech-jour-2",
+            "numero_jour": 2,
+            "titre_jour": "Jour 2 à Marrakech",
+            "theme": "Exploration",
+            "hebergement": {
+              "id_hebergement": "riad-marrakech-riad-el-fenn",
+              "nom": "Riad El Fenn",
+              "type": "🏡 Riad",
+              "categorie": "4 étoiles",
+              "imageUrl": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+              "adresse": "Derb el Farrane, Marrakech, Maroc",
+              "description": "Un riad élégant et traditionnel, offrant une expérience authentique au cœur de Marrakech. Profitez de son patio magnifique et de sa terrasse sur le toit.",
+              "equipements": [
+                "WiFi gratuit",
+                "Petit-déjeuner inclus",
+                "Terrasse",
+                "Climatisation",
+                "Salle de bain privée"
+              ],
+              "prix_nuit": "80 EUR",
+              "check_in": "14:00",
+              "check_out": "12:00",
+              "notes": "Patio agréable, Proche des souks, Service exceptionnel"
+            },
+            "emplacements": [
+              {
+                "id_emplacement": "marrakech-petit-dej-jour2",
+                "nom": "Le Jardin",
+                "type": "Restaurant",
+                "imageUrl": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d3?w=800&q=80",
+                "heure": "08:45",
+                "duree": "1h",
+                "description": "Restaurant charmant avec jardin",
+                "activites": [
+                  "Petit déjeuner"
+                ],
+                "categorie_repas": "petit_dejeuner",
+                "menu": [
+                  "Pancakes marocains",
+                  "Yaourt",
+                  "Fruits frais",
+                  "Café"
+                ],
+                "specialites": [
+                  "Délicieux petit déjeuner"
+                ],
+                "prix": "50-70 MAD (5-6 EUR)",
+                "ambiance": "Détente, nature",
+                "reservation": "Non nécessaire"
+              },
+              {
+                "id_emplacement": "marrakech-dejeuner-jour2",
+                "nom": "Chez Momo",
+                "type": "Restaurant",
+                "imageUrl": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d3?w=800&q=80",
+                "heure": "12:30",
+                "duree": "1h30",
+                "description": "Cuisine marocaine dans un cadre raffiné",
+                "activites": [
+                  "Déjeuner"
+                ],
+                "categorie_repas": "dejeuner",
+                "menu": [
+                  "Tajine poulet",
+                  "Couscous légumes",
+                  "Dessert marocain"
+                ],
+                "specialites": [
+                  "Gastronomie marocaine"
+                ],
+                "prix": "90-110 MAD (9-11 EUR)",
+                "ambiance": "Chic, convivial",
+                "reservation": "Recommandée"
+              },
+              {
+                "id_emplacement": "marrakech-jardin-majorelle",
+                "nom": "Jardin Majorelle",
+                "type": "🌿 Jardin",
+                "imageUrl": "https://images.unsplash.com/photo-1540223390-7c894c4f5e85",
+                "heure": "14:00",
+                "duree": "1h",
+                "description": "Le jardin Majorelle (en berbère : ⵓⵔⵜⵉ ⵎⴰⵊⵓⵔⵉⵍ ; en arabe : حديقة ماجوريل) est un jardin botanique touristique d'environ 300 espèces sur près d'1 hectare (10 000 m2), une villa Art déco labellisée Maisons des Illustres depuis 2011, et un musée de l'Histoire des Berbères, à Marrakech au Maroc.\nLe jardin est baptisé du nom de son fondateur, l'artiste peintre français Jacques Majorelle (1886-1962), qui l'a créé en 1931, en s'inspirant des oasis, jardin islamique et jardin espagnol-hispano-mauresque. Acheté par Yves Saint Laurent et Pierre Bergé en 1980, il appartient à ce jour à la Fondation Jardin Majorelle — qui comprend également le musée Yves Saint Laurent — et est un des hauts lieux du tourisme au Maroc, avec près de 600 000 visiteurs annuels.\nEn 2022 — selon un palmarès du site anglophone HouseFresh qui a agrégé les avis de dizaine de milliers de touristes — le jardin Majorelle est désigné deuxième plus beau jardin du monde, derrière le Gardens by the Bay de Singapour et devant le jardin du Luxembourg de Paris.",
+                "activites": [
+                  "Promenade",
+                  "Détente"
+                ],
+                "resources": [
+                  {
+                    "type": "LINK",
+                    "title": "Visite",
+                    "url": "https://www.jardinmajorelle.com"
+                  },
+                  {
+                    "type": "LINK",
+                    "title": "Wikipedia: Jardin Majorelle",
+                    "url": "https://fr.wikipedia.org/?curid=174434"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id_jour": "marrakech-jour-3",
+            "numero_jour": 3,
+            "titre_jour": "Jour 3 à Marrakech",
+            "theme": "Exploration",
+            "hebergement": {
+              "id_hebergement": "riad-marrakech-riad-el-fenn",
+              "nom": "Riad El Fenn",
+              "type": "🏡 Riad",
+              "categorie": "4 étoiles",
+              "imageUrl": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+              "adresse": "Derb el Farrane, Marrakech, Maroc",
+              "description": "Un riad élégant et traditionnel, offrant une expérience authentique au cœur de Marrakech. Profitez de son patio magnifique et de sa terrasse sur le toit.",
+              "equipements": [
+                "WiFi gratuit",
+                "Petit-déjeuner inclus",
+                "Terrasse",
+                "Climatisation",
+                "Salle de bain privée"
+              ],
+              "prix_nuit": "80 EUR",
+              "check_in": "14:00",
+              "check_out": "12:00",
+              "notes": "Patio agréable, Proche des souks, Service exceptionnel"
+            },
+            "emplacements": [
+              {
+                "id_emplacement": "marrakech-petit-dej-jour3",
+                "nom": "Café de la Poste",
+                "type": "Restaurant",
+                "imageUrl": "https://images.unsplash.com/photo-1521339491556-5adc0c2e0a6a?w=800&q=80",
+                "heure": "09:00",
+                "duree": "1h",
+                "description": "Café stylé avec une touche française",
+                "activites": [
+                  "Petit déjeuner"
+                ],
+                "categorie_repas": "petit_dejeuner",
+                "menu": [
+                  "Croissant",
+                  "Jus d'orange",
+                  "Café"
+                ],
+                "specialites": [
+                  "Petit déjeuner européen"
+                ],
+                "prix": "50-70 MAD (5-6 EUR)",
+                "ambiance": "Élégant, moderne",
+                "reservation": "Non nécessaire"
+              },
+              {
+                "id_emplacement": "marrakech-dejeuner-jour3",
+                "nom": "La Salama",
+                "type": "Restaurant",
+                "imageUrl": "https://images.unsplash.com/photo-1560453743-94c6f4eebc16?w=800&q=80",
+                "heure": "13:00",
+                "duree": "1h30",
+                "description": "Cuisine marocaine dans un cadre magique",
+                "activites": [
+                  "Déjeuner"
+                ],
+                "categorie_repas": "dejeuner",
+                "menu": [
+                  "Brochettes",
+                  "Couscous au poulet",
+                  "Tartes marocaines"
+                ],
+                "specialites": [
+                  "Cuisine locale"
+                ],
+                "prix": "100-120 MAD (10-12 EUR)",
+                "ambiance": "Magique, romantique",
+                "reservation": "Recommandée"
+              },
+              {
+                "id_emplacement": "marrakech-souks",
+                "nom": "Souks de Marrakech",
+                "type": "🛍️ Marché",
+                "imageUrl": "https://images.unsplash.com/photo-1519681393784-d15f4839e1e0",
+                "heure": "17:00",
+                "duree": "2h",
+                "description": "Marrakech (en arabe : مُرّاكُش, murrākuš ; en berbère : ⵎⵕⵕⴰⴽⵛ, Meṛṛakc) est une ville située dans le centre du Maroc au pied des montagnes de l'Atlas. Elle est surnommée « la ville rouge »ou la « ville ocre » en référence à la couleur rouge d'une grande partie de ses immeubles et de ses maisons, ou encore \"Bahja\" en raison de sa convivialité et de son hospitalité.\nMarrakech et son aire urbaine comptent en 2020 un peu plus d'un million d'habitants. Par sa population, la ville est la troisième agglomération du pays, à égalité avec sa rivale historique, Fès, derrière Casablanca et Rabat.\nCité impériale, au même titre que Meknès, Fès et Rabat, Marrakech fut la capitale du Maroc pendant près de 350 ans, sous les dynasties Almoravide (XIe – XIIe siècles), Almohade (XIIe – XIIIe siècles), Saâdienne (XVIe – XVIIe siècles), ainsi que sous le règne de Mohammed ben Abdallah de l'actuelle dynastie alaouite (régnant de 1757 à 1790).\nMarrakech abrite une vaste médina de 600 hectares, la plus peuplée d'Afrique du Nord, et classée au patrimoine mondial de l'humanité par l'UNESCO. Grâce à la vitalité de sa médina, vieille de 900 ans, ses infrastructures hôtelières de classe mondiale et son climat ensoleillé, Marrakech s'est imposée comme la capitale incontestée du tourisme au Maroc. Desservie par le deuxième aéroport du pays quant au trafic, l'aéroport de Marrakech-Ménara, la ville a accueilli en 2019 près de trois millions de visiteurs.",
+                "activites": [
+                  "Shopping",
+                  "Découverte"
+                ],
+                "resources": [
+                  {
+                    "type": "LINK",
+                    "title": "Guide des Souks",
+                    "url": "https://www.souksinmarrakech.com"
+                  },
+                  {
+                    "type": "LINK",
+                    "title": "Wikipedia: Marrakech",
+                    "url": "https://fr.wikipedia.org/?curid=8571960"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id_jour": "marrakech-jour-4",
+            "numero_jour": 4,
+            "titre_jour": "Jour 4 à Marrakech",
+            "theme": "Dernier jour",
+            "hebergement": {
+              "id_hebergement": "riad-marrakech-riad-el-fenn",
+              "nom": "Riad El Fenn",
+              "type": "🏡 Riad",
+              "categorie": "4 étoiles",
+              "imageUrl": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
+              "adresse": "Derb el Farrane, Marrakech, Maroc",
+              "description": "Un riad élégant et traditionnel, offrant une expérience authentique au cœur de Marrakech. Profitez de son patio magnifique et de sa terrasse sur le toit.",
+              "equipements": [
+                "WiFi gratuit",
+                "Petit-déjeuner inclus",
+                "Terrasse",
+                "Climatisation",
+                "Salle de bain privée"
+              ],
+              "prix_nuit": "80 EUR",
+              "check_in": "14:00",
+              "check_out": "12:00",
+              "notes": "Patio agréable, Proche des souks, Service exceptionnel"
+            },
+            "emplacements": [
+              {
+                "id_emplacement": "marrakech-petit-dej-jour4",
+                "nom": "Pâtisserie des Princes",
+                "type": "Restaurant",
+                "imageUrl": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d3?w=800&q=80",
+                "heure": "08:30",
+                "duree": "1h",
+                "description": "Pâtisserie traditionnelle marocaine",
+                "activites": [
+                  "Petit déjeuner"
+                ],
+                "categorie_repas": "petit_dejeuner",
+                "menu": [
+                  "Baklava",
+                  "Thé à la menthe",
+                  "Pain au lait"
+                ],
+                "specialites": [
+                  "Pâtisseries marocaines"
+                ],
+                "prix": "30-50 MAD (3-5 EUR)",
+                "ambiance": "Traditionnel, chaleureux",
+                "reservation": "Non nécessaire"
+              },
+              {
+                "id_emplacement": "marrakech-dejeuner-jour4",
+                "nom": "Dar Yacout",
+                "type": "Restaurant",
+                "imageUrl": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d3?w=800&q=80",
+                "heure": "12:30",
+                "duree": "2h",
+                "description": "Restaurant marocain haut de gamme",
+                "activites": [
+                  "Déjeuner"
+                ],
+                "categorie_repas": "dejeuner",
+                "menu": [
+                  "Tajine de poisson",
+                  "Couscous royal",
+                  "Dessert traditionnel"
+                ],
+                "specialites": [
+                  "Cuisine raffinée"
+                ],
+                "prix": "150-180 MAD (15-18 EUR)",
+                "ambiance": "Luxueux, authentique",
+                "reservation": "Recommandée"
+              },
+              {
+                "id_emplacement": "marrakech-cuisine-marocaine",
+                "nom": "Cours de Cuisine Marocaine",
+                "type": "🍽️ Gastronomie",
+                "imageUrl": "https://images.unsplash.com/photo-1576765598880-2d9c6f16e4f9",
+                "heure": "19:00",
+                "duree": "3h",
+                "description": "Le Maroc (/maʁɔk/  ; en arabe : ٱلْمَغْرِب, al-Maġrib ; en amazighe : ⵍⵎⵖⵔⵉⴱ, Lmɣrib), en forme longue le royaume du Maroc, autrefois appelé Empire chérifien, est un pays régionalisé situé en Afrique du Nord. Le Maroc se compose de zones montagneuses ou désertiques, et il est un des seuls pays — avec l'Espagne et la France — à comporter des rivages sur la mer Méditerranée d'un côté et l'océan Atlantique de l'autre. Sa capitale administrative et politique est Rabat et sa plus grande ville, ainsi que sa capitale économique, est Casablanca.\nSon régime politique est une monarchie semi-constitutionnelle unitaire et décentralisée à régime parlementaire. Sa population est de près de 37 millions d'habitants en 2023 et sa superficie de 446 550 km2 (76,84 hab./km2), ou de 710 850 km2 en incluant le Sahara occidental — ex-« Sahara espagnol », considéré comme un territoire non autonome par l'Organisation des Nations unies — dont il administre de facto environ 80 % et qu'il revendique dans sa totalité, tout comme le Front Polisario sous le nom de République arabe sahraouie démocratique. Sa culture est arabo-berbère depuis plusieurs siècles et s'est étendue principalement au Maghreb et dans le Sud de l'Espagne.\nLe territoire marocain possède les traces d'une présence d'hominidés datant d'environ 700 000 ans et fut habité dès la préhistoire par des populations diverses. Le premier État marocain, en tant qu'entité distincte, est fondé en 789 par Idris Ier, bien qu'il ne porte pas encore le nom de Maroc.\nPar ailleurs, il fait partie de l'Organisation des Nations unies, de la Ligue arabe, de l'Union africaine, de l'Union du Maghreb arabe, de l'Organisation de la coopération islamique, de l'Organisation internationale de la francophonie, du Groupe des 77, de l'Union pour la Méditerranée et candidat à l'adhésion à la CEDEAO.\nLa constitution royale marocaine définit l'Islam, l'arabité et l'amazighité comme « composantes fondamentales » de l'identité du peuple marocain. Cette constitution est « forgée par la convergence de ses composantes arabo-islamique, amazighe et saharo-hassanie, […] nourrie et enrichie de ses affluents africain, andalou, hébraïque et méditerranéen ». L'Islam y est défini comme religion d'État, État qui garantit à tous le libre exercice des cultes.",
+                "activites": [
+                  "Cuisine",
+                  "Dégustation"
+                ],
+                "resources": [
+                  {
+                    "type": "LINK",
+                    "title": "Réserver un Cours",
+                    "url": "https://www.cookingclassmarrakech.com"
+                  },
+                  {
+                    "type": "LINK",
+                    "title": "Wikipedia: Maroc",
+                    "url": "https://fr.wikipedia.org/?curid=2494890"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id_ville": "fès",
+        "nom_ville": "Fès",
+        "duree_sejour": 3,
+        "jours": [
+          {
+            "id_jour": "fès-jour-1",
+            "numero_jour": 5,
+            "titre_jour": "Jour 1 à Fès",
+            "theme": "Découverte",
+            "hebergement": {
+              "id_hebergement": "riad-fes-riad-lallah",
+              "nom": "Riad Lallah",
+              "type": "🏡 Riad",
+              "categorie": "3 étoiles",
+              "imageUrl": "https://images.unsplash.com/photo-1582011762336-4b5c7c7c73bc",
+              "adresse": "Derb El Hajjar, Fès, Maroc",
+              "description": "Un riad charmant dans la médina de Fès, offrant un cadre paisible et authentique. Idéal pour découvrir les merveilles de la ville.",
+              "equipements": [
+                "WiFi gratuit",
+                "Petit-déjeuner inclus",
+                "Terrasse",
+                "Climatisation",
+                "Salle de bain privée"
+              ],
+              "prix_nuit": "60 EUR",
+              "check_in": "14:00",
+              "check_out": "12:00",
+              "notes": "Proche des attractions, Confort moderne, Ambiance familiale"
+            },
+            "emplacements": [
+              {
+                "id_emplacement": "fes-petit-dej-jour1",
+                "nom": "Café Clock",
+                "type": "Restaurant",
+                "imageUrl": "https://images.unsplash.com/photo-1541646532036-d4f5c4562a7d?w=800&q=80",
+                "heure": "08:30",
+                "duree": "1h",
+                "description": "Café avec une ambiance artistique",
+                "activites": [
+                  "Petit déjeuner"
+                ],
+                "categorie_repas": "petit_dejeuner",
+                "menu": [
+                  "Harcha",
+                  "Thé à la menthe",
+                  "Fruits"
+                ],
+                "specialites": [
+                  "Petit déjeuner moderne"
+                ],
+                "prix": "40-60 MAD (4-5 EUR)",
+                "ambiance": "Créatif, détendu",
+                "reservation": "Non nécessaire"
+              },
+              {
+                "id_emplacement": "fes-medina-bali",
+                "nom": "Médina de Fès el-Bali",
+                "type": "🏛️ Médina",
+                "imageUrl": "https://images.unsplash.com/photo-1577890382648-97b6d4b4a0d5",
+                "heure": "09:00",
+                "duree": "3h",
+                "description": "La médina de Fès est une médina marocaine, cœur historique de Fès, inscrite depuis 1981 au patrimoine mondial de l'Unesco.\nFès el-Bali est le plus vieux quartier de Fès, fondé entre 789 et 808 par les Idrissides. En 1276, la médina est agrandie puisque les Mérinides fondent une ville nouvelle à part entière qui porte le nom de Fès el-Jedid, à l'ouest .",
+                "activites": [
+                  "Visite",
+                  "Exploration"
+                ],
+                "resources": [
+                  {
+                    "type": "LINK",
+                    "title": "Guide de la Médina",
+                    "url": "https://www.fes-medina.com"
+                  },
+                  {
+                    "type": "LINK",
+                    "title": "Wikipedia: Médina de Fès",
+                    "url": "https://fr.wikipedia.org/?curid=10215043"
+                  }
+                ]
+              },
+              {
+                "id_emplacement": "fes-souika",
+                "nom": "Souika",
+                "type": "🛍️ Marché",
+                "imageUrl": "https://images.unsplash.com/photo-1576763053025-5e5f3f8c9d1f",
+                "heure": "12:00",
+                "duree": "1h30",
+                "description": "Une kasbah (en arabe : قصبة qasaba, en, variantes : qasbah, casbah, qasaba) est une citadelle, commune en Afrique du Nord-Ouest, telles la casbah d'Alger,  à Rabat, ou la kasbah de Tunis, qui étaient à l'origine des fortifications militaires.\nPar extension, le mot désigne également le cœur historique – fortifié ou non – d'une ville d'Afrique du Nord. Dans cette seconde acception, le mot est plus ou moins synonyme de « médina ».",
+                "activites": [
+                  "Shopping",
+                  "Interaction"
+                ],
+                "resources": [
+                  {
+                    "type": "LINK",
+                    "title": "Visiter Souika",
+                    "url": "https://www.fes-souika.com"
+                  },
+                  {
+                    "type": "LINK",
+                    "title": "Wikipedia: Kasbah",
+                    "url": "https://fr.wikipedia.org/?curid=1065177"
+                  }
+                ]
+              },
+              {
+                "id_emplacement": "fes-dejeuner-jour1",
+                "nom": "Restaurant Dar Hatim",
+                "type": "Restaurant",
+                "imageUrl": "https://images.unsplash.com/photo-1597762084232-9a8c8ef6c72c?w=800&q=80",
+                "heure": "12:30",
+                "duree": "1h30",
+                "description": "Cuisine traditionnelle dans un cadre chaleureux",
+                "activites": [
+                  "Déjeuner"
+                ],
+                "categorie_repas": "dejeuner",
+                "menu": [
+                  "Tajine de kefta",
+                  "Couscous aux légumes",
+                  "Dessert maison"
+                ],
+                "specialites": [
+                  "Cuisine marocaine authentique"
+                ],
+                "prix": "100-120 MAD (10-12 EUR)",
+                "ambiance": "Famille, convivial",
+                "reservation": "Recommandée"
+              }
+            ]
+          },
+          {
+            "id_jour": "fès-jour-2",
+            "numero_jour": 6,
+            "titre_jour": "Jour 2 à Fès",
+            "theme": "Exploration",
+            "hebergement": {
+              "id_hebergement": "riad-fes-riad-lallah",
+              "nom": "Riad Lallah",
+              "type": "🏡 Riad",
+              "categorie": "3 étoiles",
+              "imageUrl": "https://images.unsplash.com/photo-1582011762336-4b5c7c7c73bc",
+              "adresse": "Derb El Hajjar, Fès, Maroc",
+              "description": "Un riad charmant dans la médina de Fès, offrant un cadre paisible et authentique. Idéal pour découvrir les merveilles de la ville.",
+              "equipements": [
+                "WiFi gratuit",
+                "Petit-déjeuner inclus",
+                "Terrasse",
+                "Climatisation",
+                "Salle de bain privée"
+              ],
+              "prix_nuit": "60 EUR",
+              "check_in": "14:00",
+              "check_out": "12:00",
+              "notes": "Proche des attractions, Confort moderne, Ambiance familiale"
+            },
+            "emplacements": [
+              {
+                "id_emplacement": "fes-petit-dej-jour2",
+                "nom": "Le Jardin des Biehn",
+                "type": "Restaurant",
+                "imageUrl": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d3?w=800&q=80",
+                "heure": "09:00",
+                "duree": "1h",
+                "description": "Cadre enchanteur avec jardin",
+                "activites": [
+                  "Petit déjeuner"
+                ],
+                "categorie_repas": "petit_dejeuner",
+                "menu": [
+                  "Oeufs brouillés",
+                  "Pain traditionnel",
+                  "Thé à la menthe"
+                ],
+                "specialites": [
+                  "Petit déjeuner local"
+                ],
+                "prix": "50-70 MAD (5-6 EUR)",
+                "ambiance": "Calme, agréable",
+                "reservation": "Non nécessaire"
+              },
+              {
+                "id_emplacement": "fes-dejeuner-jour2",
+                "nom": "Restaurant Le Patio",
+                "type": "Restaurant",
+                "imageUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80",
+                "heure": "12:30",
+                "duree": "1h30",
+                "description": "Cuisine raffinée dans un cadre traditionnel",
+                "activites": [
+                  "Déjeuner"
+                ],
+                "categorie_repas": "dejeuner",
+                "menu": [
+                  "Tajine de poulet",
+                  "Couscous au poisson",
+                  "Pâtisserie marocaine"
+                ],
+                "specialites": [
+                  "Cuisine traditionnelle"
+                ],
+                "prix": "100-120 MAD (10-12 EUR)",
+                "ambiance": "Élégant, authentique",
+                "reservation": "Recommandée"
+              },
+              {
+                "id_emplacement": "fes-universite-al-quaraouiyine",
+                "nom": "Université Al Quaraouiyine",
+                "type": "📚 Éducation",
+                "imageUrl": "https://images.unsplash.com/photo-1506748686214-e9df14d4d6c6",
+                "heure": "14:00",
+                "duree": "1h",
+                "description": "Al Quaraouiyine (en arabe : جامعة القرويين, en  français : Université Al Quaraouiyine) est une université située à Fès, au Maroc. Selon la tradition, sa construction débute en 859 sous le règne de la dynastie idrisside. Elle est considérée comme la plus ancienne université au monde encore en activité par l'UNESCO, le Livre Guinness des records et plusieurs historiens, un statut contesté par certains notamment en raison de la définition inconstante de ce qu'est un enseignement universitaire.\nAu XIIe siècle, toute une série de noms parmi les plus grands vont être associés d'une manière ou d'une autre à la Quaraouiyine : les grands précurseurs du soufisme, tels Ibn Hrizim, Abou Madyane, Abdeslam Ben Mchich Alami, les philosophes Avenpace et Averroès, le géographe Al Idrissi mais aussi Maïmonide, Ibn Khaldoun et Léon l'Africain pour ne citer qu'eux.[réf. nécessaire]\nElle est classée 95e dans le classement régional 2016 des universités arabes (U.S.News & World Report).",
+                "activites": [
+                  "Visite",
+                  "Apprentissage"
+                ],
+                "resources": [
+                  {
+                    "type": "LINK",
+                    "title": "Histoire de l'Université",
+                    "url": "https://www.alquaraouiyine.com"
+                  },
+                  {
+                    "type": "LINK",
+                    "title": "Wikipedia: Université Al Quaraouiyine",
+                    "url": "https://fr.wikipedia.org/?curid=1274242"
+                  }
+                ]
+              },
+              {
+                "id_emplacement": "fes-palais-royal",
+                "nom": "Palais Royal de Fès",
+                "type": "🏰 Palais",
+                "imageUrl": "https://images.unsplash.com/photo-1597782492137-2c1f43b2ab85",
+                "heure": "16:00",
+                "duree": "1h",
+                "description": "Fès ou Fez (en arabe : فَاس, Fās; en amazighe standard marocain : ⴼⴰⵙ, Fas) est une ville du Maroc septentrional, située à 180 km à l'est de Rabat, entre le massif du Rif et le Moyen Atlas. Faisant partie des villes impériales du Maroc, elle a été à plusieurs époques la capitale du pays et est considérée de nos jours comme sa capitale spirituelle.\nSa fondation remonte à la fin du VIIIe siècle, sous le règne du sultan Moulay Idriss Ier. Son prestige passé en a fait l'un des foyers majeurs de la civilisation islamique relié à Baghdad, Damas, Cordoue, Le Caire, Kairouan, Grenade, Palerme, Ispahan et Samarcande, avec lesquels elle avait établi des échanges aussi bien économiques que sociaux et culturels.\nDivers titres ont été attribués[Par qui ?] à la ville de Fès, dont l'Athènes de l'Afrique, la reine du Maghreb et la Bagdad du Maghreb[source insuffisante].\nElle s'étend sur trois secteurs: la ville ancienne (médina), classée au patrimoine mondial de l'UNESCO, l'enceinte royale et les quartiers nouveaux, établis par les Français, et qui s'étendent de nos jours dans la plaine environnante.\nSur le plan administratif, la ville est composée de la commune de Fès, qui est divisée en six arrondissements, et de la municipalité de Méchouar Fès Jdid, où se trouve le palais royal. Fès est la deuxième ville du Maroc avec une population de 1 150 131 habitants selon le recensement de 2015.",
+                "activites": [
+                  "Visite",
+                  "Photographie"
+                ],
+                "resources": [
+                  {
+                    "type": "LINK",
+                    "title": "Découvrir le Palais",
+                    "url": "https://www.fes-palaisroyal.com"
+                  },
+                  {
+                    "type": "LINK",
+                    "title": "Wikipedia: Fès",
+                    "url": "https://fr.wikipedia.org/?curid=75108"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id_jour": "fès-jour-3",
+            "numero_jour": 7,
+            "titre_jour": "Jour 3 à Fès",
+            "theme": "Dernier jour",
+            "hebergement": {
+              "id_hebergement": "riad-fes-riad-lallah",
+              "nom": "Riad Lallah",
+              "type": "🏡 Riad",
+              "categorie": "3 étoiles",
+              "imageUrl": "https://images.unsplash.com/photo-1582011762336-4b5c7c7c73bc",
+              "adresse": "Derb El Hajjar, Fès, Maroc",
+              "description": "Un riad charmant dans la médina de Fès, offrant un cadre paisible et authentique. Idéal pour découvrir les merveilles de la ville.",
+              "equipements": [
+                "WiFi gratuit",
+                "Petit-déjeuner inclus",
+                "Terrasse",
+                "Climatisation",
+                "Salle de bain privée"
+              ],
+              "prix_nuit": "60 EUR",
+              "check_in": "14:00",
+              "check_out": "12:00",
+              "notes": "Proche des attractions, Confort moderne, Ambiance familiale"
+            },
+            "emplacements": [
+              {
+                "id_emplacement": "fes-petit-dej-jour3",
+                "nom": "Café Najjarine",
+                "type": "Restaurant",
+                "imageUrl": "https://images.unsplash.com/photo-1580461967310-7e2e4a514e8e?w=800&q=80",
+                "heure": "08:30",
+                "duree": "1h",
+                "description": "Café avec vue sur la médina",
+                "activites": [
+                  "Petit déjeuner"
+                ],
+                "categorie_repas": "petit_dejeuner",
+                "menu": [
+                  "Msemen",
+                  "Thé à la menthe",
+                  "Yaourt"
+                ],
+                "specialites": [
+                  "Petit déjeuner traditionnel"
+                ],
+                "prix": "40-60 MAD (4-5 EUR)",
+                "ambiance": "Traditionnel, charmant",
+                "reservation": "Non nécessaire"
+              },
+              {
+                "id_emplacement": "fes-dejeuner-jour3",
+                "nom": "Restaurant La Maison Bleue",
+                "type": "Restaurant",
+                "imageUrl": "https://images.unsplash.com/photo-1597762084232-9a8c8ef6c72c?w=800&q=80",
+                "heure": "12:30",
+                "duree": "1h30",
+                "description": "Cuisine raffinée dans une maison traditionnelle",
+                "activites": [
+                  "Déjeuner"
+                ],
+                "categorie_repas": "dejeuner",
+                "menu": [
+                  "Tajine de bœuf",
+                  "Couscous royal",
+                  "Dessert marocain"
+                ],
+                "specialites": [
+                  "Cuisine haut de gamme"
+                ],
+                "prix": "120-140 MAD (12-14 EUR)",
+                "ambiance": "Chic, traditionnel",
+                "reservation": "Recommandée"
+              },
+              {
+                "id_emplacement": "fes-tanneries",
+                "nom": "Tanneries de Fès",
+                "type": "🌍 Artisanat",
+                "imageUrl": "https://images.unsplash.com/photo-1587933805594-bc9cc8f4b4e5",
+                "heure": "18:00",
+                "duree": "1h",
+                "description": "Fès ou Fez (en arabe : فَاس, Fās; en amazighe standard marocain : ⴼⴰⵙ, Fas) est une ville du Maroc septentrional, située à 180 km à l'est de Rabat, entre le massif du Rif et le Moyen Atlas. Faisant partie des villes impériales du Maroc, elle a été à plusieurs époques la capitale du pays et est considérée de nos jours comme sa capitale spirituelle.\nSa fondation remonte à la fin du VIIIe siècle, sous le règne du sultan Moulay Idriss Ier. Son prestige passé en a fait l'un des foyers majeurs de la civilisation islamique relié à Baghdad, Damas, Cordoue, Le Caire, Kairouan, Grenade, Palerme, Ispahan et Samarcande, avec lesquels elle avait établi des échanges aussi bien économiques que sociaux et culturels.\nDivers titres ont été attribués[Par qui ?] à la ville de Fès, dont l'Athènes de l'Afrique, la reine du Maghreb et la Bagdad du Maghreb[source insuffisante].\nElle s'étend sur trois secteurs: la ville ancienne (médina), classée au patrimoine mondial de l'UNESCO, l'enceinte royale et les quartiers nouveaux, établis par les Français, et qui s'étendent de nos jours dans la plaine environnante.\nSur le plan administratif, la ville est composée de la commune de Fès, qui est divisée en six arrondissements, et de la municipalité de Méchouar Fès Jdid, où se trouve le palais royal. Fès est la deuxième ville du Maroc avec une population de 1 150 131 habitants selon le recensement de 2015.",
+                "activites": [
+                  "Visite",
+                  "Observation"
+                ],
+                "resources": [
+                  {
+                    "type": "LINK",
+                    "title": "Visite des Tanneries",
+                    "url": "https://www.fes-tanneries.com"
+                  },
+                  {
+                    "type": "LINK",
+                    "title": "Wikipedia: Fès",
+                    "url": "https://fr.wikipedia.org/?curid=75108"
+                  }
+                ]
+              },
+              {
+                "id_emplacement": "fes-cuisine-marocaine",
+                "nom": "Atelier de Cuisine Marocaine",
+                "type": "🍽️ Gastronomie",
+                "imageUrl": "https://images.unsplash.com/photo-1602192761557-4e5f4c2a36f0",
+                "heure": "19:30",
+                "duree": "3h",
+                "description": "La culture du Maroc, désigne d'abord les pratiques culturelles observables des 37 millions d'habitants du Maroc, pays du Maghreb (estimation 2023, contre 4 millions vers 1900, 10 vers 1950, 20 vers 1980), à quoi ajouter près de 4 à 5 millions des diasporas marocaines.\nLa culture marocaine présente différents aspects, qui sont développés ci-dessous.\nSon emplacement géographique fait du Maroc un pays au carrefour de cultures et influences : Arabe, Berbère, Afrique subsaharienne, et Europe. Cette mosaïque de cultures et d'influences confère au Maroc une agréable richesse culturelle.",
+                "activites": [
+                  "Cuisine",
+                  "Dégustation"
+                ],
+                "resources": [
+                  {
+                    "type": "LINK",
+                    "title": "Réservez votre Atelier",
+                    "url": "https://www.fescookingclass.com"
+                  },
+                  {
+                    "type": "LINK",
+                    "title": "Wikipedia: Culture du Maroc",
+                    "url": "https://fr.wikipedia.org/?curid=153216"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "temps_reponse_ms": 100623,
+      "temps_reponse_secondes": 100.62,
+      "timestamp_generation": "2025-10-31T16:51:38.125Z",
+      "profil_utilisateur": {
+        "duree_jours": 7,
+        "villes": [
+          "Marrakech",
+          "Fès"
+        ],
+        "budget_range": "800-1000 EUR",
+        "rythme": "Modéré",
+        "nombre_personnes": 2,
+        "centres_interet": [
+          "Culture",
+          "Gastronomie",
+          "Histoire"
+        ],
+        "restrictions_alimentaires": [],
+        "preferences_hebergement": [
+          "Riad",
+          "Authentique"
+        ]
+      }
+    }
+  }

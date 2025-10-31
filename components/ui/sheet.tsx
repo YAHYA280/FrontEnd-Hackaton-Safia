@@ -37,15 +37,35 @@ const SheetContent = React.forwardRef<HTMLDivElement, SheetContentProps>(
       throw new Error("SheetContent must be used within a Sheet")
     }
 
-    if (!context.open) {
-      return null
+    const [isOpen, setIsOpen] = React.useState(false);
+    const [isMounted, setIsMounted] = React.useState(false);
+
+    React.useEffect(() => {
+      if (context.open) {
+        setIsMounted(true);
+        // Delay to trigger animation after mount
+        const timer = setTimeout(() => setIsOpen(true), 10);
+        return () => clearTimeout(timer);
+      } else {
+        setIsOpen(false);
+        // Unmount after animation completes
+        const timer = setTimeout(() => setIsMounted(false), 300);
+        return () => clearTimeout(timer);
+      }
+    }, [context.open]);
+
+    if (!isMounted) {
+      return null;
     }
 
     return (
       <>
         {/* Backdrop */}
         <div
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+          className={cn(
+            "fixed inset-0 z-50 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ease-in-out",
+            context.open ? "opacity-100" : "opacity-0"
+          )}
           onClick={() => context.onOpenChange(false)}
         />
 
@@ -53,8 +73,9 @@ const SheetContent = React.forwardRef<HTMLDivElement, SheetContentProps>(
         <div
           ref={ref}
           className={cn(
-            "fixed right-0 top-0 z-50 h-full w-full shadow-lg transition-transform duration-300 ease-in-out sm:max-w-xl",
+            "fixed right-0 top-0 z-50 h-full w-full shadow-lg transition-transform duration-300 ease-out sm:max-w-xl",
             "bg-white",
+            context.open && isOpen ? "translate-x-0" : "translate-x-full",
             className
           )}
           {...props}
