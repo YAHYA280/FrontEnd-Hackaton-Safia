@@ -53,7 +53,7 @@ export default function PlanTripPage() {
       }}
     >
       {/* Overlay for better readability */}
-      <div className="fixed inset-0 bg-white/40 dark:bg-black/40" />
+      <div className="fixed inset-0 bg-white/60 dark:bg-black/60" />
 
       <div className="relative z-10 flex h-full grow flex-col">
         <div className="flex flex-1 justify-center py-5">
