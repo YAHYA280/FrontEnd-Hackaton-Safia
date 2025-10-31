@@ -39,7 +39,7 @@ export default function TripPlanningHeader() {
               />
             </div>
             <h2 className="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">
-              NEXTRIP Travel Guide
+              NEXTRIP Guide de Voyage
             </h2>
           </Link>
 
@@ -49,13 +49,13 @@ export default function TripPlanningHeader() {
               href="/"
               className="text-sm font-medium text-foreground/80 hover:text-foreground transition-all duration-300 relative group px-4 py-2 rounded-lg hover:bg-amber-800/90 hover:text-white"
             >
-              Home
+              Accueil
             </Link>
             <Link
               href="/my-trips"
               className="text-sm font-medium text-foreground/80 hover:text-foreground transition-all duration-300 relative group px-4 py-2 rounded-lg hover:bg-amber-800/90 hover:text-white"
             >
-              My Trips
+              Mes Voyages
             </Link>
           </nav>
 
@@ -80,14 +80,14 @@ export default function TripPlanningHeader() {
                 className="text-sm font-medium text-foreground/80 hover:text-foreground transition-all duration-300 px-4 py-2 rounded-lg hover:bg-amber-800/90 hover:text-white"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Home
+                Accueil
               </Link>
               <Link
                 href="/my-trips"
                 className="text-sm font-medium text-foreground/80 hover:text-foreground transition-all duration-300 px-4 py-2 rounded-lg hover:bg-amber-800/90 hover:text-white"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                My Trips
+                Mes Voyages
               </Link>
             </nav>
           </div>
