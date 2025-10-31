@@ -17,7 +17,7 @@ export function GlassNavbar() {
                 <div className="absolute inset-0 blur-md bg-primary/30 group-hover:bg-primary/50 transition-all rounded-full" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                MarocAI
+                NEXTRIP
               </span>
             </Link>
 

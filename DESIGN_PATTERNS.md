@@ -1,4 +1,4 @@
-# 🎨 MarocAI Design Patterns & Examples
+# 🎨 NEXTRIP Design Patterns & Examples
 
 ## Quick Reference Guide for Glassmorphism Implementation
 
@@ -399,7 +399,7 @@ background-clip: text;
         {/* Logo */}
         <Link href="/" className="flex items-center group">
           <Compass className="h-8 w-8 text-primary group-hover:rotate-180 transition-transform duration-500" />
-          <span className="text-xl font-bold text-gradient-primary">MarocAI</span>
+          <span className="text-xl font-bold text-gradient-primary">NEXTRIP</span>
         </Link>
 
         {/* Links */}

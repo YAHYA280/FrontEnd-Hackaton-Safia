@@ -114,7 +114,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               <span className="text-foreground">Why Choose </span>
-              <span className="text-gradient-primary">MarocAI?</span>
+              <span className="text-gradient-primary">NEXTRIP?</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Experience Morocco like never before with intelligent travel
@@ -229,7 +229,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center text-muted-foreground">
             <p className="text-sm">
-              © 2025 MarocAI. Powered by AI, Inspired by Morocco.
+              © 2025 NEXTRIP. Powered by AI, Inspired by Morocco.
             </p>
           </div>
         </div>

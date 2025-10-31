@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "MarocAI - Your AI-Powered Moroccan Travel Guide",
+  title: "NEXTRIP - Your AI-Powered Moroccan Travel Guide",
   description:
-    "Plan your personalized Moroccan adventure with MarocAI - Your AI-powered guide to the magic of Morocco.",
+    "Plan your personalized Moroccan adventure with NEXTRIP - Your AI-powered guide to the magic of Morocco.",
 };
 
 export default function RootLayout({

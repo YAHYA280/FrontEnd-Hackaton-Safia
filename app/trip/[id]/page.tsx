@@ -58,7 +58,7 @@ const mockVoyageData: VoyageData = {
               imageUrl: "https://images.unsplash.com/photo-1508181292264-b3c8f5f90e16?w=300&h=200&fit=crop",
               heure: "09:00",
               description: "Exploration des quartiers historiques de la médina",
-              activites: ["Quartiers historiques", "Architecture marocaine"],
+              activites: ["Quartiers historiques", "Architecture NEXTRIPne"],
             },
             {
               id_emplacement: "loc-souks",
@@ -82,7 +82,7 @@ const mockVoyageData: VoyageData = {
       titre: "Transport: Marrakech → Fès",
       imageUrl: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=300&h=200&fit=crop",
       duree_moyenne: "7h",
-      description: "Voyage en train à travers les paysages marocains",
+      description: "Voyage en train à travers les paysages NEXTRIPns",
       activites: ["Paysages pittoresques", "Repos et découverte"],
       transportOptions: [
         {
@@ -121,7 +121,7 @@ export default function TripPage({ params }: TripPageProps) {
                 <Compass className="h-7 w-7 text-amber-900 dark:text-amber-400 transition-transform group-hover:rotate-180 duration-500" />
               </div>
               <h2 className="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">
-                MarocAI
+                NEXTRIP
               </h2>
             </Link>
 

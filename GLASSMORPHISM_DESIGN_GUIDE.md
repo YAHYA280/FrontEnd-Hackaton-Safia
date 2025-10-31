@@ -1,7 +1,7 @@
 # 🎨 Glassmorphism Design Implementation Guide
 
 ## Overview
-This guide documents the glassmorphism design system implemented for the MarocAI homepage. The design maintains the original brand colors (orange primary `#ec4913`) while adding depth, elegance, and Moroccan-inspired visual elements.
+This guide documents the glassmorphism design system implemented for the NEXTRIP homepage. The design maintains the original brand colors (orange primary `#ec4913`) while adding depth, elegance, and Moroccan-inspired visual elements.
 
 ---
 
@@ -456,5 +456,5 @@ For questions or improvements, reference this guide and the component files:
 
 ---
 
-**Created with ❤️ for MarocAI**
+**Created with ❤️ for NEXTRIP**
 *Powered by AI, Inspired by Morocco*

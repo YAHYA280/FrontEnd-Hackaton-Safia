@@ -195,7 +195,7 @@ const TripGraph = ({ voyageData, config }: TripGraphProps) => {
         const titre = transportData?.titre || `Transport: ${ville.nom_ville} → ${nextVille.nom_ville}`;
         const imageUrl = transportData?.imageUrl || "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=300&h=200&fit=crop";
         const duree = transportData?.duree_moyenne || "3-4h";
-        const description = transportData?.description || `Voyage en train ou bus de ${ville.nom_ville} vers ${nextVille.nom_ville}. Une excellente opportunité de voir les paysages marocains et découvrir le Maroc authentique.`;
+        const description = transportData?.description || `Voyage en train ou bus de ${ville.nom_ville} vers ${nextVille.nom_ville}. Une excellente opportunité de voir les paysages NEXTRIPns et découvrir le Maroc authentique.`;
         const activites = transportData?.activites || ["Paysages pittoresques du Maroc", "Arrêts panoramiques", "Repos et préparation", "Découverte des régions"];
         const resources = transportData?.resources || [];
 

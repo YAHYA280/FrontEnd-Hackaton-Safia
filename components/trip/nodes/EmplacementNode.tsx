@@ -4,10 +4,20 @@ import { memo } from 'react';
 import { NodeProps } from '@xyflow/react';
 import { Clock, MapPin } from 'lucide-react';
 
+interface EmplacementData {
+  titre: string;
+  imageUrl: string;
+  heure?: string;
+  type?: string;
+  onClick?: () => void;
+}
+
 const EmplacementNode = ({ data }: NodeProps) => {
+  const nodeData = data as unknown as EmplacementData;
+
   const handleClick = () => {
-    if (data.onClick) {
-      data.onClick();
+    if (nodeData.onClick && typeof nodeData.onClick === 'function') {
+      nodeData.onClick();
     }
   };
 
@@ -19,14 +29,14 @@ const EmplacementNode = ({ data }: NodeProps) => {
       {/* Image */}
       <div className="relative h-32 overflow-hidden">
         <img
-          src={data.imageUrl}
-          alt={data.titre}
+          src={nodeData.imageUrl}
+          alt={nodeData.titre}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-        {data.type && (
+        {nodeData.type && (
           <div className="absolute top-2 left-2 px-2 py-1 bg-amber-900/90 dark:bg-amber-700/90 backdrop-blur-sm rounded-lg">
-            <span className="text-[10px] font-bold text-white uppercase">{data.type}</span>
+            <span className="text-[10px] font-bold text-white uppercase">{nodeData.type}</span>
           </div>
         )}
       </div>
@@ -34,13 +44,13 @@ const EmplacementNode = ({ data }: NodeProps) => {
       {/* Content */}
       <div className="p-3">
         <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100 mb-2 line-clamp-2">
-          {data.titre}
+          {nodeData.titre}
         </h4>
 
-        {data.heure && (
+        {nodeData.heure && (
           <div className="flex items-center gap-1 text-xs text-slate-600 dark:text-slate-400">
             <Clock className="w-3 h-3" />
-            <span>{data.heure}</span>
+            <span>{nodeData.heure}</span>
           </div>
         )}
       </div>

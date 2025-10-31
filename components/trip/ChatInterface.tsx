@@ -5,6 +5,7 @@ import { Send, User, Paperclip, Mic } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import Image from 'next/image';
 
 interface Message {
   id: string;
@@ -83,7 +84,7 @@ const ChatInterface = ({ initialMessage }: ChatInterfaceProps) => {
       }}
     >
       {/* Subtle overlay */}
-      <div className="absolute inset-0 bg-white/80 dark:bg-slate-900/85 pointer-events-none" />
+      <div className="absolute inset-0 bg-white dark:bg-slate-900/85 pointer-events-none" />
 
       {/* Content wrapper */}
       <div className="relative h-full flex flex-col">
@@ -91,10 +92,10 @@ const ChatInterface = ({ initialMessage }: ChatInterfaceProps) => {
       <div className="px-6 py-5 border-b border-slate-200 dark:border-slate-700 bg-gradient-to-r from-white/90 via-amber-50/40 to-white/90 dark:from-slate-900/90 dark:via-amber-900/15 dark:to-slate-900/90 backdrop-blur-sm">
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-100 to-amber-50 dark:from-amber-900/40 dark:to-amber-900/20 flex items-center justify-center p-2 border border-amber-900/10 dark:border-amber-400/20 shadow-sm">
-            <img src="/logo.png" alt="Morocco Chrono Grid" className="w-full h-full object-contain" />
+            <Image src="/safia.jpg" alt="SafIA Logo" width={40} height={40} className="absolute" />
           </div>
           <div>
-            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Murchid AI</h2>
+            <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">SafIA</h2>
             <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Your Morocco Travel Assistant</p>
           </div>
         </div>
@@ -110,7 +111,7 @@ const ChatInterface = ({ initialMessage }: ChatInterfaceProps) => {
               >
                 {message.role === 'assistant' && (
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-amber-100 to-amber-50 dark:from-amber-900/40 dark:to-amber-900/20 flex items-center justify-center p-2 border border-amber-900/10 dark:border-amber-400/20 shadow-sm">
-                    <img src="/logo.png" alt="Assistant" className="w-full h-full object-contain" />
+                    <Image src="/safia.jpg" alt="Assistant" width={40} height={40} className="absolute" />
                   </div>
                 )}
 

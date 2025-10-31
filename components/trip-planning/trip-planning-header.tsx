@@ -15,7 +15,7 @@ export default function TripPlanningHeader() {
             <Compass className="h-7 w-7 text-amber-900 dark:text-amber-400 transition-transform group-hover:rotate-180 duration-500" />
           </div>
           <h2 className="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight">
-            MarocAI Travel Guide
+            NEXTRIP Travel Guide
           </h2>
         </Link>
 

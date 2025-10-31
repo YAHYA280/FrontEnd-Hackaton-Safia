@@ -27,23 +27,35 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-orange-50/30 to-slate-100 dark:from-slate-950 dark:via-orange-950/20 dark:to-slate-900">
+    <div className="relative flex h-screen w-full overflow-hidden bg-gradient-to-br from-slate-50 via-orange-50/30 to-slate-100 dark:from-slate-950 dark:via-orange-950/20 dark:to-slate-900">
       {/* Background Effects */}
       <FloatingOrbs />
       <MoroccanDecorations />
       <div className="moroccan-pattern fixed inset-0 opacity-40" />
 
-      <div className="relative layout-container flex h-full w-full grow flex-col items-center justify-center px-4 py-8">
-        <div className="glass-strong w-full max-w-md rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl animate-fade-in-scale">
+      {/* Left side - Image */}
+      <div className="relative w-[40%] h-full overflow-hidden">
+        <img
+          src="/side-image-login.png"
+          alt="Morocco"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-50/20 dark:to-slate-950/20" />
+      </div>
+
+      {/* Right side - Form */}
+      <div className="relative flex w-[60%] h-full items-center justify-center px-8 py-8 bg-white dark:bg-slate-900">
+        <div className="w-full max-w-md rounded-3xl p-8 sm:p-10 md:p-12 animate-fade-in-scale shadow-2xl bg-white dark:bg-slate-800">
           <div className="flex w-full flex-col items-center">
             {/* Logo and Branding */}
             <Link href="/" className="flex items-center gap-3 mb-8 group">
-              <div className="relative">
-                <Compass className="h-10 w-10 text-primary transition-transform group-hover:rotate-180 duration-500" />
-                <div className="absolute inset-0 blur-md bg-primary/30 group-hover:bg-primary/50 transition-all rounded-full" />
-              </div>
+              <img
+                src="/logo.svg"
+                alt="Logo"
+                className="h-10 w-10 transition-transform group-hover:scale-110 duration-500"
+              />
               <span className="text-2xl font-bold text-gradient-primary">
-                MarocAI
+                NEXTRIP
               </span>
             </Link>
 
