@@ -43,25 +43,23 @@ export default function Home() {
             <div className="animate-fade-in-up inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm">
               <Sparkles className="h-4 w-4 text-primary" />
               <span className="text-foreground/80">
-                AI-Powered Travel Planning
+                Votre Prochain Voyage, Propulsé par l'IA
               </span>
             </div>
 
             {/* Main Heading */}
             <h1 className="animate-fade-in-up delay-100 text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
               <span className="block text-foreground">
-                Discover the Magic of
+                Planifiez Moins,
               </span>
               <span className="block text-gradient-primary mt-2">
-                Morocco with AI
+                Vivez Plus
               </span>
             </h1>
 
             {/* Subheading */}
             <p className="animate-fade-in-up delay-200 mx-auto max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Plan your perfect Moroccan adventure with intelligent
-              recommendations, personalized itineraries, and authentic local
-              experiences.
+              NEXTRIP est votre compagnon de voyage intelligent pour le Maroc. Optimisation budgétaire intelligente, itinéraires personnalisés et assistance 24h/24 pour rentabiliser chaque dirham.
             </p>
 
             {/* CTA Buttons */}
@@ -71,7 +69,7 @@ export default function Home() {
                   size="lg"
                   className="glow-primary-hover group text-base px-8 py-6"
                 >
-                  Start Planning
+                  Commencer à Planifier
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
@@ -81,29 +79,80 @@ export default function Home() {
                   variant="outline"
                   className="glass-strong hover-glow text-base px-8 py-6"
                 >
-                  Sign In
+                  Se Connecter
                 </Button>
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Stats */}
-            <div className="animate-fade-in-up delay-400 pt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-              {[
-                { value: "10+", label: "Moroccan Cities" },
-                { value: "500+", label: "Destinations" },
-                { value: "1000+", label: "Happy Travelers" },
-                { value: "24/7", label: "AI Support" },
-              ].map((stat, index) => (
-                <div key={index} className="clean-card p-6 hover-lift">
-                  <div className="text-3xl md:text-4xl font-bold text-gradient-primary">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-muted-foreground mt-1">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
+      {/* Problem Section */}
+      <section className="relative py-16 px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-foreground">Voyager Ne Devrait Pas Être </span>
+              <span className="text-gradient-primary">Si Compliqué</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-8">
+              Des voyages stressants, mal planifiés, où le voyageur passe plus de temps à organiser qu'à profiter.
+            </p>
+          </div>
+
+          {/* Problem Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                title: "Planification Budgétaire Complexe",
+                description: "Difficulté à estimer les coûts réels (transport, hébergement, nourriture, activités) et à répartir intelligemment un budget limité entre différentes villes marocaines."
+              },
+              {
+                title: "Manque de Transparence Tarifaire",
+                description: "Les prix varient énormément selon les saisons, les villes et le type d'expérience (luxe vs authentique), rendant difficile l'estimation précise des dépenses."
+              },
+              {
+                title: "Surcharge Informationnelle",
+                description: "Trop de sources disparates (blogs, forums, guides touristiques) sans vision unifiée ni personnalisation selon le profil et le budget du voyageur."
+              },
+              {
+                title: "Optimisation Sous-Optimale",
+                description: "Les voyageurs dépensent souvent mal leur budget (trop sur l'hébergement, pas assez sur les expériences) ou manquent des opportunités locales."
+              },
+              {
+                title: "Barrière Linguistique",
+                description: "Difficulté à comprendre les codes locaux, les périodes idéales, les spécificités régionales du Maroc sans assistance."
+              },
+              {
+                title: "Manque d'Accompagnement",
+                description: "Absence de support continu pendant le voyage pour réajuster les plans, gérer les imprévus et optimiser l'expérience en temps réel."
+              }
+            ].map((problem, index) => (
+              <div key={index} className="clean-card p-6 hover-lift">
+                <h3 className="text-lg font-bold text-foreground mb-3">{problem.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{problem.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SafIA Introduction */}
+      <section className="relative py-16 px-6 lg:px-8 bg-gradient-to-br from-amber-50/50 to-orange-50/30 dark:from-amber-950/20 dark:to-orange-950/10">
+        <div className="mx-auto max-w-5xl">
+          <div className="clean-card p-10 md:p-16 text-center">
+            <div className="mb-6">
+              <span className="text-6xl md:text-7xl font-bold text-gradient-primary">SafIA</span>
             </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Votre Assistante Voyage IA
+            </h3>
+            <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
+              <strong className="text-primary">Saf</strong> (سفر - Safar = Voyage en arabe) + <strong className="text-primary">IA</strong> (Intelligence Artificielle)
+            </p>
+            <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              SafIA incarne parfaitement notre mission : combiner la richesse culturelle du voyage avec la puissance de l'intelligence artificielle. Elle communique naturellement avec vous, recommande les meilleurs endroits, s'améliore à chaque utilisation et vous accompagne du début à la fin de votre voyage.
+            </p>
           </div>
         </div>
       </section>
@@ -113,12 +162,11 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              <span className="text-foreground">Why Choose </span>
-              <span className="text-gradient-primary">NEXTRIP?</span>
+              <span className="text-foreground">Découvrez </span>
+              <span className="text-gradient-primary">NEXTRIP</span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Experience Morocco like never before with intelligent travel
-              planning
+              Une application de voyage intelligent propulsée par l'IA, spécialisée dans la planification budgétaire de voyages au Maroc
             </p>
           </div>
 
@@ -126,50 +174,50 @@ export default function Home() {
             {[
               {
                 icon: Lightbulb,
-                title: "AI-Powered Insights",
+                title: "Optimisation Budgétaire IA",
                 description:
-                  "Get personalized recommendations based on your interests, budget, and travel style.",
+                  "Allocation intelligente de chaque dirham selon vos priorités : aventure, confort, culture ou gastronomie.",
                 color: "from-orange-500 to-orange-600",
               },
               {
                 icon: Map,
-                title: "Custom Itineraries",
+                title: "Personnalisation Profonde",
                 description:
-                  "Generate detailed day-by-day plans optimized for your preferences and time.",
+                  "L'IA apprend de vos préférences et adapte les recommandations (routard vs luxe, nature vs ville, solo vs famille).",
                 color: "from-blue-500 to-blue-600",
               },
               {
                 icon: MapPin,
-                title: "Local Experiences",
+                title: "Transparence Totale",
                 description:
-                  "Discover hidden gems and authentic Moroccan culture beyond tourist spots.",
+                  "Visualisation claire de chaque poste de dépense avec justification, alternatives et prix locaux réels.",
                 color: "from-green-500 to-green-600",
               },
               {
                 icon: Calendar,
-                title: "Smart Scheduling",
+                title: "Gain de Temps Massif",
                 description:
-                  "Optimize your time with intelligent routing and activity recommendations.",
+                  "Ce qui prendrait des jours de recherche se fait en quelques minutes avec une précision supérieure.",
                 color: "from-purple-500 to-purple-600",
               },
               {
                 icon: Palette,
-                title: "Cultural Immersion",
+                title: "Contextualisation Locale",
                 description:
-                  "Connect with Moroccan traditions, art, gastronomy, and local communities.",
+                  "Intégration de données marocaines spécifiques : météo, événements culturels, prix locaux, conseils pratiques.",
                 color: "from-pink-500 to-pink-600",
               },
               {
                 icon: Shield,
-                title: "Safe & Verified",
+                title: "Assistance Continue 24/7",
                 description:
-                  "All recommendations are verified and updated for your safety and comfort.",
+                  "SafIA disponible en permanence pour réajuster le plan, répondre aux questions, suggérer des alternatives.",
                 color: "from-teal-500 to-teal-600",
               },
             ].map((feature, index) => (
               <div
                 key={index}
-                className="group clean-card p-8 hover-lift animate-fade-in-scale"
+                className="group clean-card p-8 animate-fade-in-scale transition-all duration-300 hover:shadow-[0_8px_30px_rgb(146,64,14,0.12)] hover:-translate-y-1"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative mb-6">
@@ -178,7 +226,6 @@ export default function Home() {
                   >
                     <feature.icon className="h-7 w-7 text-white" />
                   </div>
-                  <div className="absolute inset-0 blur-xl opacity-30 bg-gradient-to-br from-primary to-transparent rounded-2xl" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                   {feature.title}
@@ -188,6 +235,55 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Vision Section */}
+      <section className="relative py-20 px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              <span className="text-foreground">Notre </span>
+              <span className="text-gradient-primary">Vision</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="clean-card p-8 hover-lift">
+              <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
+                <Sparkles className="h-7 w-7 text-primary" />
+                Vision à Long Terme
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Devenir l'application de référence pour tout voyage au Maroc, où l'intelligence artificielle démocratise l'accès au tourisme marocain en rendant chaque budget viable et chaque expérience mémorable. NEXTRIP aspire à être l'interface entre le voyageur moderne et la richesse culturelle marocaine.
+              </p>
+            </div>
+
+            <div className="clean-card p-8 hover-lift">
+              <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
+                <Shield className="h-7 w-7 text-primary" />
+                Valeur Ajoutée Unique
+              </h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Optimisation IA de chaque dirham selon vos priorités</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Personnalisation profonde avec apprentissage continu</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Transparence financière totale et contextualisation locale</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Gain de temps massif avec précision supérieure</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -203,19 +299,18 @@ export default function Home() {
 
             <div className="relative z-10">
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                <span className="text-foreground">Ready to Explore </span>
-                <span className="text-gradient-primary">Morocco?</span>
+                <span className="text-foreground">Votre Prochain Voyage au </span>
+                <span className="text-gradient-primary">Maroc Vous Attend</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Join thousands of travelers who have discovered the magic of
-                Morocco with personalized AI-powered itineraries.
+                Laissez NEXTRIP et SafIA gérer la planification pendant que vous vous concentrez sur la création de souvenirs inoubliables. Chaque budget, chaque style, chaque rêve—optimisé.
               </p>
               <Link href="/plan-trip">
                 <Button
                   size="lg"
                   className="glow-primary-hover group text-lg px-10 py-7"
                 >
-                  Plan Your Trip Now
+                  Commencer avec SafIA
                   <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
@@ -229,7 +324,10 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center text-muted-foreground">
             <p className="text-sm">
-              © 2025 NEXTRIP. Powered by AI, Inspired by Morocco.
+              © 2025 NEXTRIP. Planifiez Moins, Vivez Plus.
+            </p>
+            <p className="text-xs mt-2 opacity-75">
+              Propulsé par SafIA - Votre Compagnon de Voyage IA
             </p>
           </div>
         </div>

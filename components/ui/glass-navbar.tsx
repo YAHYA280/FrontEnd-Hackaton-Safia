@@ -50,19 +50,19 @@ export function GlassNavbar() {
                 href="/"
                 className="text-sm font-medium text-foreground/80 hover:text-foreground transition-all duration-300 relative group px-4 py-2 rounded-lg hover:bg-amber-800/90 hover:text-white"
               >
-                Home
+                Accueil
               </Link>
               <Link
                 href="/plan-trip"
                 className="text-sm font-medium text-foreground/80 hover:text-foreground transition-all duration-300 relative group px-4 py-2 rounded-lg hover:bg-amber-800/90 hover:text-white"
               >
-                Plan Trip
+                Planifier
               </Link>
               <Link
                 href="/my-trips"
                 className="text-sm font-medium text-foreground/80 hover:text-foreground transition-all duration-300 relative group px-4 py-2 rounded-lg hover:bg-amber-800/90 hover:text-white"
               >
-                My Trips
+                Mes Voyages
               </Link>
             </div>
 
@@ -70,12 +70,12 @@ export function GlassNavbar() {
             <div className="flex items-center space-x-3">
               <Link href="/signin">
                 <Button variant="ghost" size="sm" className="hover-glow">
-                  Sign In
+                  Connexion
                 </Button>
               </Link>
               <Link href="/signup">
                 <Button size="sm" className="glow-primary-hover">
-                  Get Started
+                  Commencer
                 </Button>
               </Link>
             </div>
