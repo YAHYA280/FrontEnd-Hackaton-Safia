@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { EyeOff, Eye, Compass } from "lucide-react";
+import { EyeOff, Eye } from "lucide-react";
 import { FloatingOrbs } from "@/components/ui/floating-orbs";
 import { MoroccanDecorations } from "@/components/ui/moroccan-decorations";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -12,18 +13,35 @@ export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { register } = useAuth();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
 
     // Basic validation
     if (password !== confirmPassword) {
-      alert("Passwords do not match!");
+      setError("Passwords do not match!");
       return;
     }
 
-    // Add your sign-up logic here
-    console.log("Sign up with:", { email, password });
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      await register(email, password);
+      // Navigation is handled by the register function
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to sign up");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -81,6 +99,12 @@ export default function SignUpPage() {
                   Create your account to explore Morocco with AI
                 </p>
               </div>
+
+              {error && (
+                <div className="w-full rounded-lg bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900 px-4 py-3 text-sm text-red-600 dark:text-red-400">
+                  {error}
+                </div>
+              )}
 
               <form
                 onSubmit={handleSubmit}
@@ -160,9 +184,10 @@ export default function SignUpPage() {
 
                 <button
                   type="submit"
-                  className="mt-2 rounded-xl h-12 px-6 bg-primary hover:bg-primary/90 text-white text-base font-bold leading-normal transition-all hover:scale-105"
+                  disabled={loading}
+                  className="mt-2 rounded-xl h-12 px-6 bg-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed text-white text-base font-bold leading-normal transition-all hover:scale-105 disabled:hover:scale-100"
                 >
-                  <span>Sign Up</span>
+                  <span>{loading ? "Signing up..." : "Sign Up"}</span>
                 </button>
               </form>
 

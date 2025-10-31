@@ -2,19 +2,32 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { EyeOff, Eye, Compass } from "lucide-react";
+import { EyeOff, Eye } from "lucide-react";
 import { FloatingOrbs } from "@/components/ui/floating-orbs";
 import { MoroccanDecorations } from "@/components/ui/moroccan-decorations";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { login } = useAuth();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Add your sign-in logic here
-    console.log("Sign in with:", { email, password });
+    setError("");
+    setLoading(true);
+
+    try {
+      await login(email, password);
+      // Navigation is handled by the login function
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to sign in");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -73,6 +86,12 @@ export default function SignInPage() {
                 </p>
               </div>
 
+              {error && (
+                <div className="w-full rounded-lg bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-900 px-4 py-3 text-sm text-red-600 dark:text-red-400">
+                  {error}
+                </div>
+              )}
+
               <form
                 onSubmit={handleSubmit}
                 className="flex w-full flex-col items-stretch gap-4"
@@ -120,9 +139,10 @@ export default function SignInPage() {
 
                 <button
                   type="submit"
-                  className="mt-2 rounded-xl h-12 px-6 bg-primary hover:bg-primary/90 text-white text-base font-bold leading-normal transition-all hover:scale-105"
+                  disabled={loading}
+                  className="mt-2 rounded-xl h-12 px-6 bg-primary hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed text-white text-base font-bold leading-normal transition-all hover:scale-105 disabled:hover:scale-100"
                 >
-                  <span>Sign In</span>
+                  <span>{loading ? "Signing in..." : "Sign In"}</span>
                 </button>
               </form>
 
