@@ -317,7 +317,9 @@ export default function PlanTripPage() {
         <div className="fixed inset-0 bg-white/60 dark:bg-black/60" />
 
         <div className="relative z-10 flex h-full grow flex-col">
-          <div className="flex flex-1 justify-center py-5">
+          <TripPlanningHeader />
+
+          <div className="flex flex-1 justify-center py-5 pt-24">
             <div className="flex flex-col w-full max-w-4xl flex-1 px-4 md:px-6 py-10">
               <DynamicFormWizard
                 form={dynamicForm}
@@ -354,10 +356,10 @@ export default function PlanTripPage() {
       <div className="fixed inset-0 bg-white/60 dark:bg-black/60" />
 
       <div className="relative z-10 flex h-full grow flex-col">
-        <div className="flex flex-1 justify-center py-5">
-          <div className="flex flex-col w-full max-w-4xl flex-1 px-4 md:px-6">
-            <TripPlanningHeader />
+        <TripPlanningHeader />
 
+        <div className="flex flex-1 justify-center py-5 pt-24">
+          <div className="flex flex-col w-full max-w-4xl flex-1 px-4 md:px-6">
             <main className="flex-1 space-y-8 py-10">
               <div className="text-center px-4 animate-fade-in-up">
                 <h1 className="text-slate-900 dark:text-slate-100 tracking-tight text-4xl md:text-5xl font-bold leading-tight pb-3 pt-6">
