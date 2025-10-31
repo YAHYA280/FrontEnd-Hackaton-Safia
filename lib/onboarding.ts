@@ -63,6 +63,7 @@ export type ShowDynamicForm = {
 export type DoneProfile = {
   nextAction: 'done';
   profile: BackendProfileResponse['profile'];
+  tripId: string; // UUID généré pour le trip
 };
 
 export type ErrorResult = {
@@ -80,6 +81,39 @@ export type StartOnboardingArgs = {
 export type ContinueOnboardingArgs = StartOnboardingArgs & {
   DYNAMIC_RESPONSES: DynamicResponses;
 };
+
+/**
+ * Génère un UUID v4 simple
+ */
+function generateUUID(): string {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    const r = Math.random() * 16 | 0;
+    const v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+/**
+ * Stocke les préférences utilisateur dans localStorage
+ */
+function saveTripPreferences(tripId: string, profile: BackendProfileResponse['profile']): void {
+  if (typeof window === 'undefined') return;
+  
+  const tripData = {
+    tripId,
+    profile,
+    createdAt: new Date().toISOString(),
+  };
+  
+  localStorage.setItem(`trip_${tripId}`, JSON.stringify(tripData));
+  
+  // Stocke aussi la liste des trips de l'utilisateur
+  const tripsList = JSON.parse(localStorage.getItem('user_trips') || '[]') as string[];
+  if (!tripsList.includes(tripId)) {
+    tripsList.push(tripId);
+    localStorage.setItem('user_trips', JSON.stringify(tripsList));
+  }
+}
 
 async function postOnboarding(
   url: string,
@@ -137,9 +171,16 @@ export async function startOnboarding(
   }
 
   if (resp.stage === 'profile') {
+    // Générer un UUID pour le trip
+    const tripId = generateUUID();
+    
+    // Enregistrer les préférences dans localStorage
+    saveTripPreferences(tripId, resp.profile);
+    
     return {
       nextAction: 'done',
       profile: resp.profile,
+      tripId,
     } as DoneProfile;
   }
 
@@ -168,9 +209,16 @@ export async function continueOnboarding(
   }
 
   if (resp.stage === 'profile') {
+    // Générer un UUID pour le trip
+    const tripId = generateUUID();
+    
+    // Enregistrer les préférences dans localStorage
+    saveTripPreferences(tripId, resp.profile);
+    
     return {
       nextAction: 'done',
       profile: resp.profile,
+      tripId,
     } as DoneProfile;
   }
 

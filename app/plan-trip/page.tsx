@@ -19,112 +19,6 @@ import LoadingView from "@/components/trip/LoadingView";
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:4000";
 
-// Mock data for testing dynamic form
-const MOCK_DYNAMIC_FORM = {
-  title: "Suivi de votre voyage au Maroc",
-  description: "Merci d'avoir partagé vos préférences. Veuillez répondre aux questions suivantes pour affiner votre profil voyageur.",
-  questions: [
-    {
-      key: "favorite_cuisine",
-      label: "Quelle cuisine souhaitez-vous découvrir?",
-      type: "multi",
-      options: [
-        "Marocaine",
-        "Méditerranéenne",
-        "Internationale",
-        "Street Food"
-      ],
-      maxSelect: 2,
-      required: true
-    },
-    {
-      key: "football_interest",
-      label: "Êtes-vous intéressé par des événements footballistiques?",
-      type: "single",
-      options: [
-        "Oui",
-        "Non"
-      ],
-      required: true
-    },
-    {
-      key: "activities_preference",
-      label: "Quelles activités préférez-vous?",
-      type: "multi",
-      options: [
-        "Visites culturelles",
-        "Randonnées",
-        "Ateliers de cuisine",
-        "Sports",
-        "Shopping"
-      ],
-      maxSelect: 3,
-      required: true
-    },
-    {
-      key: "accommodation_type",
-      label: "Quel type d'hébergement préférez-vous?",
-      type: "single",
-      options: [
-        "Hôtel",
-        "Riad",
-        "Auberge",
-        "Location d'appartement"
-      ],
-      required: true
-    },
-    {
-      key: "transport_preference",
-      label: "Quel mode de transport préférez-vous?",
-      type: "multi",
-      options: [
-        "Voiture de location",
-        "Transport public",
-        "Taxi",
-        "À pied"
-      ],
-      maxSelect: 2,
-      required: true
-    },
-    {
-      key: "family_travel",
-      label: "Voyagez-vous avec des enfants?",
-      type: "single",
-      options: [
-        "Oui",
-        "Non"
-      ],
-      required: true
-    },
-    {
-      key: "luxury_experience",
-      label: "Souhaitez-vous inclure des expériences de luxe?",
-      type: "single",
-      options: [
-        "Oui",
-        "Non"
-      ],
-      required: true
-    },
-    {
-      key: "cultural_events",
-      label: "Souhaitez-vous assister à des événements culturels?",
-      type: "single",
-      options: [
-        "Oui",
-        "Non"
-      ],
-      required: true
-    },
-    {
-      key: "travel_group_size",
-      label: "Combien de personnes voyagez-vous avec?",
-      type: "number",
-      required: true
-    }
-  ]
-};
-
 // Available options for questions
 const ALL_CITIES = ["Casablanca", "Marrakech", "Fes", "Rabat", "Tangier", "Agadir", "Chefchaouen", "Essaouira"];
 const ALL_SERVICES = ["Accommodation", "Restaurants", "Transportation", "Activities", "Shopping"];
@@ -169,7 +63,6 @@ export default function PlanTripPage() {
   } | null>(null);
   const [dynamicResponses, setDynamicResponses] = useState<Record<string, any>>({});
   const [showLoading, setShowLoading] = useState(false);
-  const [useMockData, setUseMockData] = useState(false);
 
   // Build initial questions based on available options
   const buildInitialQuestions = () => [
@@ -197,26 +90,6 @@ export default function PlanTripPage() {
     setDynamicForm(null);
 
     try {
-      // Use mock data if enabled
-      if (useMockData && acceptDynamicForm) {
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        setDynamicForm(MOCK_DYNAMIC_FORM);
-        setShowDynamicWizard(true);
-        setLoading(false);
-        return;
-      }
-
-      if (useMockData && !acceptDynamicForm) {
-        // Simulate API delay and direct profile creation
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        const mockProfileId = `mock-${Date.now()}`;
-        console.log("Mock profile created:", mockProfileId);
-        router.push(`/trip/${mockProfileId}`);
-        setLoading(false);
-        return;
-      }
-
       const result = await startOnboarding({
         BACKEND_URL,
         INITIAL_QUESTIONS: buildInitialQuestions(),
@@ -230,7 +103,8 @@ export default function PlanTripPage() {
       } else if (result.nextAction === "done") {
         // Profile created successfully, redirect to trip page
         console.log("Profile created:", result.profile);
-        router.push(`/trip/${result.profile.id}`);
+        console.log("Trip ID:", result.tripId);
+        router.push(`/trip/${result.tripId}`);
       } else if (result.nextAction === "error") {
         setError(result.message);
       }
@@ -250,19 +124,6 @@ export default function PlanTripPage() {
     setShowDynamicWizard(false);
 
     try {
-      // Use mock data if enabled
-      if (useMockData) {
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        const mockProfileId = `mock-${Date.now()}`;
-        console.log("Mock profile created with dynamic responses:", mockProfileId, dynamicResponses);
-        setDynamicForm(null);
-        setDynamicResponses({});
-        router.push(`/trip/${mockProfileId}`);
-        setLoading(false);
-        return;
-      }
-
       const result = await continueOnboarding({
         BACKEND_URL,
         INITIAL_QUESTIONS: buildInitialQuestions(),
@@ -274,9 +135,10 @@ export default function PlanTripPage() {
       if (result.nextAction === "done") {
         // Profile created successfully, redirect to trip page
         console.log("Profile created:", result.profile);
+        console.log("Trip ID:", result.tripId);
         setDynamicForm(null);
         setDynamicResponses({});
-        router.push(`/trip/${result.profile.id}`);
+        router.push(`/trip/${result.tripId}`);
       } else if (result.nextAction === "error") {
         setShowLoading(false);
         setShowDynamicWizard(true);
@@ -425,20 +287,6 @@ export default function PlanTripPage() {
                       className="text-sm font-medium text-slate-700 dark:text-slate-300 cursor-pointer"
                     >
                       Generate additional preference fields (AI-powered)
-                    </Label>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <Checkbox
-                      id="use-mock-data"
-                      checked={useMockData}
-                      onCheckedChange={(v) => setUseMockData(Boolean(v))}
-                    />
-                    <Label
-                      htmlFor="use-mock-data"
-                      className="text-sm font-medium text-amber-700 dark:text-amber-400 cursor-pointer"
-                    >
-                      Use Mock Data (Testing Mode)
                     </Label>
                   </div>
                 </div>

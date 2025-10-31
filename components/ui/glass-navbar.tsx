@@ -4,9 +4,11 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/contexts/AuthContext";
 
 export function GlassNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { isAuthenticated, user, logout } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,16 +70,34 @@ export function GlassNavbar() {
 
             {/* CTA Buttons */}
             <div className="flex items-center space-x-3">
-              <Link href="/signin">
-                <Button variant="ghost" size="sm" className="hover-glow">
-                  Connexion
-                </Button>
-              </Link>
-              <Link href="/signup">
-                <Button size="sm" className="glow-primary-hover">
-                  Commencer
-                </Button>
-              </Link>
+              {isAuthenticated ? (
+                <>
+                  <span className="text-sm text-foreground/70 hidden sm:inline">
+                    {user?.email}
+                  </span>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={logout}
+                    className="hover-glow"
+                  >
+                    Sign Out
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Link href="/signin">
+                    <Button variant="ghost" size="sm" className="hover-glow">
+                      Sign In
+                    </Button>
+                  </Link>
+                  <Link href="/signup">
+                    <Button size="sm" className="glow-primary-hover">
+                      Get Started
+                    </Button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
