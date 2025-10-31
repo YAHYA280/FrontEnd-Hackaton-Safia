@@ -3,16 +3,17 @@ import { Button } from "@/components/ui/button";
 import { GlassNavbar } from "@/components/ui/glass-navbar";
 import { FloatingOrbs } from "@/components/ui/floating-orbs";
 import { MoroccanDecorations } from "@/components/ui/moroccan-decorations";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  Sparkles,
-  MapPin,
-  Calendar,
-  Lightbulb,
-  ArrowRight,
-  Map,
-  Palette,
-  Shield,
-} from "lucide-react";
+  faStar,
+  faLocationDot,
+  faCalendar,
+  faLightbulb,
+  faArrowRight,
+  faMap,
+  faPalette,
+  faShield,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   return (
@@ -41,7 +42,7 @@ export default function Home() {
           <div className="text-center space-y-8">
             {/* Badge */}
             <div className="animate-fade-in-up inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm">
-              <Sparkles className="h-4 w-4 text-primary" />
+              <FontAwesomeIcon icon={faStar} className="h-4 w-4 text-primary" />
               <span className="text-foreground/80">
                 Votre Prochain Voyage, Propulsé par l'IA
               </span>
@@ -70,7 +71,10 @@ export default function Home() {
                   className="glow-primary-hover group text-base px-8 py-6"
                 >
                   Commencer à Planifier
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
+                  />
                 </Button>
               </Link>
               <Link href="/signin">
@@ -195,46 +199,46 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: Lightbulb,
+                icon: faLightbulb,
                 title: "Optimisation Budgétaire IA",
                 description:
                   "Allocation intelligente de chaque dirham selon vos priorités : aventure, confort, culture ou gastronomie.",
-                color: "from-orange-500 to-orange-600",
+                color: "#3e9392",
               },
               {
-                icon: Map,
+                icon: faMap,
                 title: "Personnalisation Profonde",
                 description:
                   "L'IA apprend de vos préférences et adapte les recommandations (routard vs luxe, nature vs ville, solo vs famille).",
-                color: "from-blue-500 to-blue-600",
+                color: "blue",
               },
               {
-                icon: MapPin,
+                icon: faLocationDot,
                 title: "Transparence Totale",
                 description:
                   "Visualisation claire de chaque poste de dépense avec justification, alternatives et prix locaux réels.",
-                color: "from-green-500 to-green-600",
+                color: "green",
               },
               {
-                icon: Calendar,
+                icon: faCalendar,
                 title: "Gain de Temps Massif",
                 description:
                   "Ce qui prendrait des jours de recherche se fait en quelques minutes avec une précision supérieure.",
-                color: "from-purple-500 to-purple-600",
+                color: "fpurple",
               },
               {
-                icon: Palette,
+                icon: faPalette,
                 title: "Contextualisation Locale",
                 description:
                   "Intégration de données marocaines spécifiques : météo, événements culturels, prix locaux, conseils pratiques.",
-                color: "from-pink-500 to-pink-600",
+                color: "pink",
               },
               {
-                icon: Shield,
+                icon: faShield,
                 title: "Assistance Continue 24/7",
                 description:
                   "SafIA disponible en permanence pour réajuster le plan, répondre aux questions, suggérer des alternatives.",
-                color: "from-teal-500 to-teal-600",
+                color: "teal",
               },
             ].map((feature, index) => (
               <div
@@ -243,11 +247,10 @@ export default function Home() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative mb-6">
-                  <div
-                    className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${feature.color} opacity-90`}
-                  >
-                    <feature.icon className="h-7 w-7 text-white" />
-                  </div>
+                  <FontAwesomeIcon
+                    icon={feature.icon}
+                    className={`h-7 w-7 text-${feature.color}`}
+                  />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
                   {feature.title}
@@ -274,7 +277,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="clean-card p-8 hover-lift">
               <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
-                <Sparkles className="h-7 w-7 text-primary" />
+                <FontAwesomeIcon
+                  icon={faStar}
+                  className="h-7 w-7 text-primary"
+                />
                 Vision à Long Terme
               </h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -288,7 +294,10 @@ export default function Home() {
 
             <div className="clean-card p-8 hover-lift">
               <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
-                <Shield className="h-7 w-7 text-primary" />
+                <FontAwesomeIcon
+                  icon={faShield}
+                  className="h-7 w-7 text-primary"
+                />
                 Valeur Ajoutée Unique
               </h3>
               <ul className="space-y-3 text-muted-foreground">
@@ -347,7 +356,10 @@ export default function Home() {
                   className="glow-primary-hover group text-lg px-10 py-7"
                 >
                   Commencer avec SafIA
-                  <ArrowRight className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1" />
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    className="ml-2 h-6 w-6 transition-transform group-hover:translate-x-1"
+                  />
                 </Button>
               </Link>
             </div>
