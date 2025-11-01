@@ -108,10 +108,10 @@ export default function DynamicFormWizard({
       <div className="mb-8">
         <div className="flex justify-between items-center mb-2">
           <span className="text-sm font-medium text-slate-600 dark:text-slate-400">
-            Question {currentStep + 1} of {totalQuestions}
+            Question {currentStep + 1} sur {totalQuestions}
           </span>
           <span className="text-sm font-medium text-amber-900 dark:text-amber-400">
-            {Math.round(((currentStep + 1) / totalQuestions) * 100)}% Complete
+            {Math.round(((currentStep + 1) / totalQuestions) * 100)}% Terminé
           </span>
         </div>
         <div className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
@@ -235,9 +235,9 @@ export default function DynamicFormWizard({
               </div>
               {currentQuestion.maxSelect && (
                 <p className="text-sm text-slate-600 dark:text-slate-400">
-                  Maximum {currentQuestion.maxSelect} selections
+                  Maximum {currentQuestion.maxSelect} sélections
                   {Array.isArray(getCurrentValue()) &&
-                    ` (${getCurrentValue().length}/${currentQuestion.maxSelect} selected)`}
+                    ` (${getCurrentValue().length}/${currentQuestion.maxSelect} sélectionné${getCurrentValue().length > 1 ? 's' : ''})`}
                 </p>
               )}
             </div>
@@ -252,7 +252,7 @@ export default function DynamicFormWizard({
                 onResponseChange(currentQuestion.key, parseInt(e.target.value))
               }
               className="w-full text-lg p-4 bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-amber-900/20 focus:border-amber-900"
-              placeholder="Enter a number"
+              placeholder="Entrez un nombre"
               min="0"
             />
           )}
@@ -264,7 +264,7 @@ export default function DynamicFormWizard({
               value={getCurrentValue() || ""}
               onChange={(e) => onResponseChange(currentQuestion.key, e.target.value)}
               className="w-full text-lg p-4 bg-slate-50 dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-amber-900/20 focus:border-amber-900"
-              placeholder="Enter your answer"
+              placeholder="Entrez votre réponse"
             />
           )}
         </div>
@@ -279,7 +279,7 @@ export default function DynamicFormWizard({
           disabled={loading}
         >
           <ChevronLeft className="w-5 h-5 mr-2" />
-          {isFirstQuestion ? "Back to Form" : "Previous"}
+          {isFirstQuestion ? "Retour au formulaire" : "Précédent"}
         </Button>
 
         <Button
@@ -288,12 +288,12 @@ export default function DynamicFormWizard({
           className="flex-1 h-14 text-lg font-semibold bg-gradient-to-r from-amber-900 to-amber-800 hover:from-amber-800 hover:to-amber-700"
         >
           {loading ? (
-            "Processing..."
+            "Traitement..."
           ) : isLastQuestion ? (
-            "Complete"
+            "Terminé"
           ) : (
             <>
-              Next
+              Suivant
               <ChevronRight className="w-5 h-5 ml-2" />
             </>
           )}

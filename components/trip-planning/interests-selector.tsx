@@ -10,24 +10,24 @@ interface InterestsSelectorProps {
 }
 
 const INTERESTS = [
-  "Music",
+  "Musique",
   "Art",
-  "Family",
-  "Adventure",
+  "Famille",
+  "Aventure",
   "Culture",
-  "Food",
+  "Gastronomie",
   "Nature",
-  "History",
-  "Photography",
+  "Histoire",
+  "Photographie",
   "Shopping",
   "Sports",
-  "Wellness",
+  "Bien-être",
   "Architecture",
-  "Beach",
-  "Mountains",
-  "Desert",
-  "Nightlife",
-  "Local Markets",
+  "Plage",
+  "Montagnes",
+  "Désert",
+  "Vie Nocturne",
+  "Marchés Locaux",
 ];
 
 export default function InterestsSelector({
@@ -70,7 +70,7 @@ export default function InterestsSelector({
   return (
     <div className="clean-card p-6 hover-lift">
       <h2 className="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight pb-4">
-        Your Interests
+        Vos Intérêts
       </h2>
 
       <div className="space-y-4">
@@ -100,7 +100,7 @@ export default function InterestsSelector({
               className="flex items-center justify-center gap-x-2 rounded-full px-5 py-2.5 transition-all hover:scale-105 font-medium text-sm bg-slate-50 dark:bg-slate-800 border-2 border-dashed border-slate-300 dark:border-slate-600 hover:border-amber-900/40 text-slate-900 dark:text-slate-100"
             >
               <Plus className="w-4 h-4" />
-              Other
+              Autre
             </button>
           )}
         </div>
@@ -110,7 +110,7 @@ export default function InterestsSelector({
           <div className="flex gap-2 animate-fade-in-up">
             <Input
               type="text"
-              placeholder="Enter custom interest..."
+              placeholder="Entrez un intérêt personnalisé..."
               value={customInterest}
               onChange={(e) => setCustomInterest(e.target.value)}
               onKeyPress={(e) => {
@@ -125,7 +125,7 @@ export default function InterestsSelector({
               onClick={handleAddCustomInterest}
               className="px-4 py-2 rounded-xl bg-amber-900 dark:bg-amber-700 text-white hover:bg-amber-800 dark:hover:bg-amber-600 transition-all"
             >
-              Add
+              Ajouter
             </button>
             <button
               onClick={() => {
@@ -134,7 +134,7 @@ export default function InterestsSelector({
               }}
               className="px-4 py-2 rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-slate-100 hover:bg-slate-300 dark:hover:bg-slate-600 transition-all"
             >
-              Cancel
+              Annuler
             </button>
           </div>
         )}
@@ -142,7 +142,7 @@ export default function InterestsSelector({
         {/* Custom/Selected Interests with Remove Option */}
         {selectedInterests.filter(i => !isPredefined(i)).length > 0 && (
           <div className="pt-2">
-            <p className="text-xs text-slate-600 dark:text-slate-400 mb-2 font-medium">Custom Interests:</p>
+            <p className="text-xs text-slate-600 dark:text-slate-400 mb-2 font-medium">Intérêts Personnalisés :</p>
             <div className="flex flex-wrap gap-2">
               {selectedInterests
                 .filter(i => !isPredefined(i))

@@ -49,10 +49,10 @@ export default function BudgetSelector({
   return (
     <div className="clean-card p-6 hover-lift">
       <h2 className="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight pb-1">
-        Your Budget
+        Votre Budget
       </h2>
       <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">
-        Set your budget range in MAD
+        Définissez votre budget en MAD
       </p>
 
       <div className="flex justify-between items-center text-slate-900 dark:text-slate-100 font-semibold text-lg mb-4">

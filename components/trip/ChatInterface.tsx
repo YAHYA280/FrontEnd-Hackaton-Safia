@@ -24,9 +24,9 @@ const ChatInterface = ({ initialMessage }: ChatInterfaceProps) => {
     {
       id: '1',
       role: 'assistant',
-      content: initialMessage || 'Hey there, adventurous soul! Ready to dive into another cultural escapade or maybe a thrilling solo adventure? Let\'s craft your next unforgettable journey!',
+      content: initialMessage || 'Bonjour, âme aventureuse ! Prêt à plonger dans une nouvelle escapade culturelle ou peut-être une aventure solo palpitante ? Créons ensemble votre prochain voyage inoubliable !',
       timestamp: new Date(),
-      suggestions: ['Explore medina', 'Visit tanneries', 'Try local food', 'Desert adventure', 'Atlas Mountains'],
+      suggestions: ['Explorer la médina', 'Visiter les tanneries', 'Essayer la cuisine locale', 'Aventure dans le désert', 'Montagnes de l\'Atlas'],
     },
   ]);
   const [input, setInput] = useState('');
@@ -52,7 +52,7 @@ const ChatInterface = ({ initialMessage }: ChatInterfaceProps) => {
       const aiResponse: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: `Great choice! Let me help you with "${messageText}". I'm gathering the best recommendations and creating a personalized itinerary for you.`,
+        content: `Excellent choix ! Laissez-moi vous aider avec "${messageText}". Je rassemble les meilleures recommandations et crée un itinéraire personnalisé pour vous.`,
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, aiResponse]);
@@ -96,7 +96,7 @@ const ChatInterface = ({ initialMessage }: ChatInterfaceProps) => {
           </div>
           <div>
             <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">SafIA</h2>
-            <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Your Morocco Travel Assistant</p>
+            <p className="text-xs text-slate-600 dark:text-slate-400 font-medium">Votre Assistant de Voyage au Maroc</p>
           </div>
         </div>
       </div>
@@ -161,7 +161,7 @@ const ChatInterface = ({ initialMessage }: ChatInterfaceProps) => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder="Ask me anything about your trip..."
+            placeholder="Posez-moi n'importe quelle question sur votre voyage..."
             className="flex-1 border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 font-medium"
           />
           <button className="p-1.5 hover:bg-amber-50 dark:hover:bg-amber-900/20 rounded-full transition-colors">
@@ -177,8 +177,8 @@ const ChatInterface = ({ initialMessage }: ChatInterfaceProps) => {
           </Button>
         </div>
         <p className="text-[11px] text-center text-slate-500 dark:text-slate-400 mt-3">
-          AI-powered assistance • Click to share{' '}
-          <span className="underline cursor-pointer hover:text-amber-900 dark:hover:text-amber-400 transition-colors font-medium">feedback</span>
+          Assistance propulsée par IA • Cliquez pour partager vos{' '}
+          <span className="underline cursor-pointer hover:text-amber-900 dark:hover:text-amber-400 transition-colors font-medium">commentaires</span>
         </p>
       </div>
       </div>

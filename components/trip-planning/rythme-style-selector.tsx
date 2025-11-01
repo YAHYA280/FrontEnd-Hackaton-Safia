@@ -8,9 +8,9 @@ interface RythmeStyleSelectorProps {
 }
 
 const RYTHME_STYLES = [
-  { name: "Intensif", icon: Zap, description: "Action-packed, fast-paced adventures" },
-  { name: "Modéré", icon: Coffee, description: "Balanced mix of activities and rest" },
-  { name: "Détendu", icon: CloudSun, description: "Relaxed, leisurely pace" },
+  { name: "Intensif", icon: Zap, description: "Aventures intenses et rapides" },
+  { name: "Modéré", icon: Coffee, description: "Mélange équilibré d'activités et de repos" },
+  { name: "Détendu", icon: CloudSun, description: "Rythme détendu et tranquille" },
 ];
 
 export default function RythmeStyleSelector({

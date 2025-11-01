@@ -50,14 +50,14 @@ export default function CitySelector({
   return (
     <div className="clean-card p-6 hover-lift">
       <h2 className="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight pb-4">
-        Where to?
+        Où allez-vous ?
       </h2>
 
       <div className="relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5 z-10" />
         <Input
           className="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-amber-900/20 focus:border-amber-900 transition-all text-slate-900 dark:text-slate-100 placeholder:text-slate-400"
-          placeholder="Search cities..."
+          placeholder="Rechercher des villes..."
           type="text"
           value={searchTerm}
           onChange={(e) => {

@@ -354,22 +354,22 @@ const TripGraph = ({ voyageData, config, isLoading = false }: TripGraphProps) =>
 
           {/* Title with animation */}
           <h2 className="text-2xl font-semibold text-slate-900 dark:text-slate-100 tracking-tight animate-pulse">
-            Designing your trip...
+            Conception de votre voyage...
           </h2>
 
           {/* Suggestions */}
           <div className="space-y-3 text-center text-sm">
             <p className="text-slate-500 dark:text-slate-400 animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
-              Modify anything to make it more you
+              Modifiez tout pour le personnaliser
             </p>
             <p className="text-slate-900 dark:text-slate-100 font-medium animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
-              Add hidden gems, not tourist traps
+              Ajoutez des joyaux cachés, pas des pièges à touristes
             </p>
             <p className="text-slate-500 dark:text-slate-400 animate-fade-in" style={{ animationDelay: '0.9s', animationFillMode: 'both' }}>
-              Download itinerary pdf
+              Téléchargez l'itinéraire en PDF
             </p>
             <p className="text-slate-400 dark:text-slate-500 animate-fade-in" style={{ animationDelay: '1.2s', animationFillMode: 'both' }}>
-              Share with your companions
+              Partagez avec vos compagnons
             </p>
           </div>
 
@@ -400,7 +400,7 @@ const TripGraph = ({ voyageData, config, isLoading = false }: TripGraphProps) =>
             <div className="flex items-center gap-2">
               <Info className="w-4 h-4 text-amber-900 dark:text-amber-400" />
               <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
-                Your Journey Map
+                Votre Carte de Voyage
               </h3>
             </div>
             {isLegendOpen ? (
@@ -416,32 +416,32 @@ const TripGraph = ({ voyageData, config, isLoading = false }: TripGraphProps) =>
             <div className="space-y-2">
               <p className="flex items-center gap-2">
                 <span className="w-6 h-6 bg-gradient-to-br from-amber-900 to-amber-800 rounded border-2 border-amber-950"></span>
-                City 
+                Ville
               </p>
               <p className="flex items-center gap-2">
                 <span className="w-6 h-6 bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 rounded border-2 border-slate-200 dark:border-slate-700"></span>
-                Day (uniform width)
+                Jour (largeur uniforme)
               </p>
             </div>
             <div className="border-t border-slate-200 dark:border-slate-700 pt-2 space-y-2">
               <p className="flex items-center gap-2">
                 <span className="w-6 h-0.5 bg-amber-900 dark:bg-amber-400 rounded-full"></span>
-                Main route
+                Itinéraire principal
               </p>
               <p className="flex items-center gap-2">
                 <span className="w-6 h-0.5 bg-amber-600 dark:bg-amber-500 rounded-full border border-amber-600 dark:border-amber-500"></span>
-                Alt route
+                Itinéraire alternatif
               </p>
               <p className="flex items-center gap-2">
                 <span className="w-4 h-4 bg-gradient-to-br from-amber-900 to-amber-800 dark:from-amber-400 dark:to-amber-500 rounded-full border-2 border-white dark:border-slate-900 shadow-md"></span>
-                🚗 Transport (click)
+                🚗 Transport (cliquer)
               </p>
               <p className="flex items-center gap-2">
                 <span className="w-4 h-4 bg-gradient-to-br from-amber-700 to-amber-600 dark:from-amber-500 dark:to-amber-400 rounded-full border-2 border-white dark:border-slate-900 shadow-md"></span>
-                🏨 Hébergement (click)
+                🏨 Hébergement (cliquer)
               </p>
             </div>
-            <p className="mt-3 text-[10px] border-t border-slate-200 dark:border-slate-700 pt-2 text-slate-600 dark:text-slate-400">💡 Click locations • Transport • Hébergement</p>
+            <p className="mt-3 text-[10px] border-t border-slate-200 dark:border-slate-700 pt-2 text-slate-600 dark:text-slate-400">💡 Cliquez sur lieux • Transport • Hébergement</p>
           </div>
         </CollapsibleContent>
       </Collapsible>
@@ -647,7 +647,7 @@ const TripGraph = ({ voyageData, config, isLoading = false }: TripGraphProps) =>
                   <div className="flex items-center gap-2 mb-4">
                     <div className="h-1 w-1 rounded-full bg-amber-900 dark:bg-amber-400"></div>
                     <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider">
-                      À découvrir en route
+                      À Découvrir en Route
                     </h3>
                   </div>
                   <div className="space-y-3">
@@ -671,7 +671,7 @@ const TripGraph = ({ voyageData, config, isLoading = false }: TripGraphProps) =>
                   <div className="flex items-center gap-2 mb-4">
                     <div className="h-1 w-1 rounded-full bg-amber-900 dark:bg-amber-400"></div>
                     <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider">
-                      Resources
+                      Ressources
                     </h3>
                   </div>
                   <div className="space-y-3">
@@ -833,9 +833,9 @@ const TripGraph = ({ voyageData, config, isLoading = false }: TripGraphProps) =>
                     {selectedHebergement.contact.website && (
                       <div className="flex items-center gap-2">
                         <Globe className="w-4 h-4 text-slate-600 dark:text-slate-400" />
-                        <a 
-                          href={selectedHebergement.contact.website} 
-                          target="_blank" 
+                        <a
+                          href={selectedHebergement.contact.website}
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="text-amber-900 dark:text-amber-400 hover:underline"
                         >

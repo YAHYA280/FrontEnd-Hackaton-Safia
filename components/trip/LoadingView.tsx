@@ -11,22 +11,22 @@ const LoadingView = () => {
 
         {/* Title with animation */}
         <h2 className="text-2xl font-semibold text-slate-900 dark:text-slate-100 tracking-tight animate-pulse">
-          Designing your trip...
+          Conception de votre voyage...
         </h2>
 
         {/* Suggestions */}
         <div className="space-y-3 text-center text-sm">
           <p className="text-slate-500 dark:text-slate-400 animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
-            Modify anything to make it more you
+            Modifiez tout pour le personnaliser
           </p>
           <p className="text-slate-900 dark:text-slate-100 font-medium animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
-            Add hidden gems, not tourist traps
+            Ajoutez des joyaux cachés, pas des pièges à touristes
           </p>
           <p className="text-slate-500 dark:text-slate-400 animate-fade-in" style={{ animationDelay: '0.9s', animationFillMode: 'both' }}>
-            Download itinerary pdf
+            Téléchargez l'itinéraire en PDF
           </p>
           <p className="text-slate-400 dark:text-slate-500 animate-fade-in" style={{ animationDelay: '1.2s', animationFillMode: 'both' }}>
-            Share with your companions
+            Partagez avec vos compagnons
           </p>
         </div>
 

@@ -9,11 +9,11 @@ interface AIAssistanceProps {
 }
 
 const SERVICES = [
-  "All",
-  "Accommodation",
+  "Tout",
+  "Hébergement",
   "Restaurants",
-  "Transportation",
-  "Activities",
+  "Transport",
+  "Activités",
   "Shopping",
 ];
 
@@ -22,8 +22,8 @@ export default function AIAssistance({
   onServicesChange,
 }: AIAssistanceProps) {
   const handleServiceToggle = (service: string) => {
-    if (service === "All") {
-      if (selectedServices.includes("All")) {
+    if (service === "Tout") {
+      if (selectedServices.includes("Tout")) {
         onServicesChange([]);
       } else {
         onServicesChange(SERVICES);
@@ -33,16 +33,16 @@ export default function AIAssistance({
 
     if (selectedServices.includes(service)) {
       const newServices = selectedServices.filter(
-        (s) => s !== service && s !== "All"
+        (s) => s !== service && s !== "Tout"
       );
       onServicesChange(newServices);
     } else {
       const newServices = [...selectedServices, service].filter(
-        (s) => s !== "All"
+        (s) => s !== "Tout"
       );
       // Check if all individual services are selected
       if (newServices.length === SERVICES.length - 1) {
-        onServicesChange([...newServices, "All"]);
+        onServicesChange([...newServices, "Tout"]);
       } else {
         onServicesChange(newServices);
       }
@@ -56,10 +56,10 @@ export default function AIAssistance({
   return (
     <div className="clean-card p-6 hover-lift">
       <h2 className="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight pb-1">
-        AI Assistance
+        Assistance IA
       </h2>
       <p className="text-slate-500 dark:text-slate-400 text-sm mb-6">
-        Let our AI handle the bookings for you
+        Laissez notre IA gérer les réservations pour vous
       </p>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">

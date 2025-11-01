@@ -238,7 +238,7 @@ export default function TripPage({ params }: TripPageProps) {
                 {displayData.titre_voyage}
               </h1>
               <span className="px-3 py-1 rounded-full bg-amber-50 dark:bg-amber-900/20 border border-amber-900/20 dark:border-amber-400/20 text-amber-900 dark:text-amber-400 text-xs font-medium">
-                {displayData.duree_totale} days
+                {displayData.duree_totale} jours
               </span>
             </div>
           </div>
@@ -249,14 +249,14 @@ export default function TripPage({ params }: TripPageProps) {
               className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-amber-900 dark:hover:text-amber-400 text-sm font-medium transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">Back to Planning</span>
+              <span className="hidden sm:inline">Retour à la Planification</span>
             </Link>
             <Link
               href="/"
               className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-amber-900 dark:hover:text-amber-400 text-sm font-medium transition-colors"
             >
               <Home className="w-4 h-4" />
-              <span className="hidden sm:inline">Home</span>
+              <span className="hidden sm:inline">Accueil</span>
             </Link>
           </nav>
         </div>
@@ -267,7 +267,7 @@ export default function TripPage({ params }: TripPageProps) {
         {/* Left Side - Chat Interface */}
         <div className="w-1/2 h-full border-r border-slate-200 dark:border-slate-700">
           <ChatInterface
-            initialMessage="Hey there! Ready to explore your personalized Morocco itinerary? Ask me anything about your trip, and I can help you customize it!"
+            initialMessage="Bonjour ! Prêt à explorer votre itinéraire personnalisé au Maroc ? Posez-moi n'importe quelle question sur votre voyage, et je peux vous aider à le personnaliser !"
           />
         </div>
 

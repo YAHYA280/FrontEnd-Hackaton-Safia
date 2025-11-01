@@ -21,8 +21,8 @@ const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:400
 
 // Available options for questions
 const ALL_CITIES = ["Casablanca", "Marrakech", "Fes", "Rabat", "Tangier", "Agadir", "Chefchaouen", "Essaouira"];
-const ALL_SERVICES = ["Accommodation", "Restaurants", "Transportation", "Activities", "Shopping"];
-const ALL_INTERESTS = ["Music", "Art", "Family", "Adventure", "Culture", "Food", "Nature", "History", "Photography", "Shopping", "Sports", "Wellness", "Architecture", "Beach", "Mountains", "Desert", "Nightlife", "Local Markets"];
+const ALL_SERVICES = ["Hébergement", "Restaurants", "Transport", "Activités", "Shopping"];
+const ALL_INTERESTS = ["Musique", "Art", "Famille", "Aventure", "Culture", "Gastronomie", "Nature", "Histoire", "Photographie", "Shopping", "Sports", "Bien-être", "Architecture", "Plage", "Montagnes", "Désert", "Vie Nocturne", "Marchés Locaux"];
 const ALL_STYLES = ["Intensif", "Modéré", "Détendu"];
 
 export default function PlanTripPage() {
@@ -34,13 +34,13 @@ export default function PlanTripPage() {
   const [budgetRange, setBudgetRange] = useState({ min: 1000, max: 30000 });
   const [dates, setDates] = useState({ start: "", end: "" });
   const [aiServices, setAiServices] = useState<string[]>([
-    "Accommodation",
+    "Hébergement",
     "Restaurants",
   ]);
   const [interests, setInterests] = useState<string[]>([
-    "Music",
+    "Musique",
     "Art",
-    "Family",
+    "Famille",
   ]);
   const [rythmeStyle, setRythmeStyle] = useState<string>("Modéré");
 
@@ -66,21 +66,21 @@ export default function PlanTripPage() {
 
   // Build initial questions based on available options
   const buildInitialQuestions = () => [
-    { label: "Where to?", values: ALL_CITIES },
-    { label: "Your Budget (in MAD)", values: [] },
-    { label: "Trip Dates", values: [] },
-    { label: "AI Assistance", values: ALL_SERVICES },
-    { label: "Your Interests", values: ALL_INTERESTS },
+    { label: "Où allez-vous ?", values: ALL_CITIES },
+    { label: "Votre Budget (en MAD)", values: [] },
+    { label: "Dates du Voyage", values: [] },
+    { label: "Assistance IA", values: ALL_SERVICES },
+    { label: "Vos Intérêts", values: ALL_INTERESTS },
     { label: "Rythme Style", values: ALL_STYLES },
   ];
 
   // Build responses from current form state
   const buildInitialResponses = () => ({
-    "Where to?": selectedCities,
-    "Your Budget (in MAD)": `${budgetRange.min}-${budgetRange.max}`,
-    "Trip Dates": { start: dates.start, end: dates.end },
-    "AI Assistance": aiServices,
-    "Your Interests": interests,
+    "Où allez-vous ?": selectedCities,
+    "Votre Budget (en MAD)": `${budgetRange.min}-${budgetRange.max}`,
+    "Dates du Voyage": { start: dates.start, end: dates.end },
+    "Assistance IA": aiServices,
+    "Vos Intérêts": interests,
     "Rythme Style": rythmeStyle,
   });
 
@@ -225,14 +225,13 @@ export default function PlanTripPage() {
             <main className="flex-1 space-y-8 py-10">
               <div className="text-center px-4 animate-fade-in-up">
                 <h1 className="text-slate-900 dark:text-slate-100 tracking-tight text-4xl md:text-5xl font-bold leading-tight pb-3 pt-6">
-                  Craft Your Perfect{" "}
+                  Créez Votre{" "}
                   <span className="text-gradient-primary">
-                    Moroccan Adventure
+                    Aventure Marocaine Parfaite
                   </span>
                 </h1>
                 <p className="text-slate-600 dark:text-slate-400 text-lg font-normal leading-normal pb-3 pt-1 max-w-2xl mx-auto">
-                  Tell us your preferences, and our AI will build a personalized
-                  itinerary just for you.
+                  Dites-nous vos préférences, et notre IA créera un itinéraire personnalisé rien que pour vous.
                 </p>
               </div>
 
@@ -286,7 +285,7 @@ export default function PlanTripPage() {
                       htmlFor="accept-dynamic-form"
                       className="text-sm font-medium text-slate-700 dark:text-slate-300 cursor-pointer"
                     >
-                      Generate additional preference fields (AI-powered)
+                      Générer des champs de préférences supplémentaires (propulsé par IA)
                     </Label>
                   </div>
                 </div>
@@ -297,10 +296,10 @@ export default function PlanTripPage() {
                   className="btn-primary w-full max-w-sm mx-auto text-lg py-6 px-8"
                 >
                   {loading
-                    ? "Generating..."
+                    ? "Génération..."
                     : acceptDynamicForm
-                    ? "Personalize More Your Trip →"
-                    : "Generate My Itinerary →"}
+                    ? "Personnalisez Davantage Votre Voyage →"
+                    : "Générer Mon Itinéraire →"}
                 </Button>
               </div>
             </main>
